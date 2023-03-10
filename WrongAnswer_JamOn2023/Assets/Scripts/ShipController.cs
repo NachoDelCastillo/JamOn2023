@@ -22,7 +22,7 @@ public class ShipController : MonoBehaviour
     // LOGIC VARIABLES
     Vector3 prev_up;
     float current_speed;
-    float max_speed = 300; // 170;
+    float max_speed = 200; // 170;
     float accel = 80f;
     float deccel = 200f;
 

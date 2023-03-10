@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: fe50098060e10384c82d51aa82fef39e
+guid: 18390aef9c2dac2479fa52226672b821
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Road_Dark
-    second: {fileID: 2100000, guid: 88c73ce4008d4fd09f34430c1a0404f2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Road_Light
-    second: {fileID: 2100000, guid: 7082ad62555843d587bece9ae1d85182, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -45,7 +35,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 3000
+    globalScale: 5000
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -98,7 +88,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 3000
+    globalScale: 50
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

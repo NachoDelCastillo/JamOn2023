@@ -21,8 +21,6 @@ public class BossMovement : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, player.position);
 
-        Debug.Log("distance = " + distance);
-
         splineFollower.followSpeed = (100000/distance);
     }
 }
