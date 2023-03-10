@@ -6,7 +6,9 @@ using UnityEngine.InputSystem;
 public class ShipController : MonoBehaviour
 {
     [SerializeField]
-    Transform gfx;
+    Transform steeringPivot;
+    [SerializeField]
+    Transform barrelRollPivot;
 
     // RAYCAST
     RaycastHit downHit;
@@ -56,6 +58,15 @@ public class ShipController : MonoBehaviour
     // INPUT
     bool accelerate_pressed;
     public void Acelerate(InputAction.CallbackContext context)
+    {
+        if (context.started)
+            accelerate_pressed = true;
+        else if (context.canceled)
+            accelerate_pressed = false;
+    }
+
+
+    public void Jump(InputAction.CallbackContext context)
     {
         if (context.started)
             accelerate_pressed = true;
@@ -127,8 +138,8 @@ public class ShipController : MonoBehaviour
         global_orientation = Quaternion.Euler(0, turn_angle, 0);
 
         // Inclinacion lateral
-        float lateralRotation = Mathf.LerpAngle(gfx.localRotation.eulerAngles.z, -horizontal_input * 20, Time.deltaTime * 5);
-        gfx.localRotation = Quaternion.Euler(0, 0, lateralRotation);
+        float lateralRotation = Mathf.LerpAngle(steeringPivot.localRotation.eulerAngles.z, -horizontal_input * 20, Time.deltaTime * 5);
+        steeringPivot.localRotation = Quaternion.Euler(0, 0, lateralRotation);
     }
 
     void MoveShip()
