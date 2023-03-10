@@ -13,6 +13,10 @@ public class ShipController : MonoBehaviour
     float rayCastDistance = 10f;
     [SerializeField]
     LayerMask trackLayer;
+    [SerializeField]
+    LayerMask invisibleTrackLayer_RIGHT;
+    [SerializeField]
+    LayerMask invisibleTrackLayer_LEFT;
 
 
     // HOVER
@@ -23,6 +27,7 @@ public class ShipController : MonoBehaviour
     Vector3 prev_up;
     float current_speed;
     float max_speed = 200; // 170;
+    float min_speed = 100;
     float accel = 80f;
     float deccel = 200f;
 
@@ -62,38 +67,58 @@ public class ShipController : MonoBehaviour
     {
         prev_up = transform.up;
 
+        // Calcular velocidad
+        if (accelerate_pressed)
+        {
+            float realAccel = accel * Time.deltaTime;
+
+            current_speed += (current_speed + realAccel > max_speed) ? 0 : realAccel;
+        }
+        else if (current_speed > 0)
+        {
+            current_speed -= deccel * Time.deltaTime;
+            current_speed = Mathf.Max(current_speed, 0f);
+        }
+        //else
+        //    current_speed = 0f;
+
+        current_speed = Mathf.Max(current_speed, min_speed);
+
+
         // Comprobar si esta encima de la carretera
         if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, trackLayer))
         {
-            if (accelerate_pressed)
-            {
-                float realAccel = accel * Time.deltaTime;
-
-                current_speed += (current_speed + realAccel > max_speed) ? 0 : realAccel;
-            }
-            else if (current_speed > 0)
-            {
-                current_speed -= deccel * Time.deltaTime;
-                current_speed = Mathf.Max(current_speed, 0f);
-            }
-            else
-                current_speed = 0f;
-
-            TurnShip();
-            AdjustOrientation();
-            //checkGroundMovement();
-            MoveShip();
-
+            GetTurnInput();
         }
+        else if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, invisibleTrackLayer_RIGHT))
+        {
+            horizontal_input = -1;
+        }
+        else if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, invisibleTrackLayer_LEFT))
+        {
+            horizontal_input = 1;
+        }
+
+        TurnShip();
+
+        AdjustOrientation();
+        //checkGroundMovement();
+        MoveShip();
+    }
+
+    float horizontal_input;
+    float vertical_input;
+    void GetTurnInput()
+    {
+        horizontal_input = Input.GetAxis("Horizontal");
+        vertical_input = Input.GetAxis("Vertical");
     }
 
     void TurnShip()
     {
-        // INPUT
-        float horizontal_input;
-        float vertical_input;
-        horizontal_input = Input.GetAxis("Horizontal");
-        vertical_input = Input.GetAxis("Vertical");
+        //// INPUT
+        //horizontal_input = Input.GetAxis("Horizontal");
+        //vertical_input = Input.GetAxis("Vertical");
 
 
         // Calcular angulo de rotacion
