@@ -16,7 +16,7 @@ public class ShipController : MonoBehaviour
 
 
     // HOVER
-    float hover_height = 1.8f - .5f;
+    float hover_height = 1.9f; // 1.8f - .5f;
     float height_above_cast = 5;
 
     // LOGIC VARIABLES
