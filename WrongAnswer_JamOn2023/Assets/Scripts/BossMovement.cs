@@ -1,18 +1,28 @@
+using Dreamteck.Splines;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BossMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    Transform player;
+
+    SplineFollower splineFollower;
+
+    float maxDistance = 2000;
+
+    private void Awake()
     {
-        
+        splineFollower = GetComponent<SplineFollower>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        float distance = Vector3.Distance(transform.position, player.position);
+
+        Debug.Log("distance = " + distance);
+
+        splineFollower.followSpeed = (100000/distance);
     }
 }
