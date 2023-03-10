@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     GameObject toSpawn;
     [SerializeField]
-    Transform player;
+    SplineFollower boss;
     [SerializeField]
     SplineComputer track;
     [SerializeField]
@@ -17,14 +17,14 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     float tMax;
     [SerializeField]
-    double percentAhead;
-    [SerializeField]
     float maxPosVariation;
 
     float nextSpawn = 0;
     float cont = 0;
 
     LayerMask trackLayer;
+
+    List<GameObject> spawns = new List<GameObject>();
 
     private void Start()
     {
@@ -37,27 +37,22 @@ public class Spawner : MonoBehaviour
         if (cont > nextSpawn)
         {
             SpawnObject(GetWhereToSpawnPercent());
-            cont = 0; 
+            cont = 0;
             nextSpawn = UnityEngine.Random.Range(tMin, tMax);
         }
         else
         {
             cont += Time.deltaTime;
         }
+
+
     }
 
     private double GetWhereToSpawnPercent()
     {
         SplineSample nearestPer = new SplineSample();
-        track.Project(nearestPer, player.position);
-        if (nearestPer.percent + percentAhead > 1.0)
-        {
-            return nearestPer.percent + percentAhead - 1.0;
-        }
-        else
-        {
-            return nearestPer.percent + percentAhead;
-        }
+        track.Project(nearestPer, boss.transform.position);
+        return nearestPer.percent;
     }
 
     private void SpawnObject(double percentInTrack)
@@ -75,7 +70,7 @@ public class Spawner : MonoBehaviour
 
         if (Physics.Raycast(referencia.position, rayDir, out RaycastHit hit, 300, ~trackLayer))
         {
-            var spawn = Instantiate(toSpawn, hit.point, rotacionFinal);
+            spawns.Insert(0, Instantiate(toSpawn, hit.point, rotacionFinal));
         }
     }
 
