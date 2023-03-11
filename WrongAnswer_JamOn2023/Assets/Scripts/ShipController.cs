@@ -44,6 +44,8 @@ public class ShipController : MonoBehaviour
     private float turn_angle;
     private float turn_speed = 80;
 
+    //Shield
+    Shield shield;
     void Awake()
     {
         Debug.DrawLine(transform.position, transform.position - transform.up * rayCastDistance, Color.green, 50);
@@ -54,7 +56,9 @@ public class ShipController : MonoBehaviour
             previousGravity = -downHit.normal;
         }
     }
-
+    private void Start(){
+        shield=GetComponentInChildren<Shield>();
+    }
     // INPUT
     bool accelerate_pressed;
     public void Acelerate(InputAction.CallbackContext context)

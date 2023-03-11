@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public bool active = false;
+    private void Start(){        
+        setActive(active);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void setActive(bool act){
+        active = act;
+        this.gameObject.SetActive(active);
     }
 }
