@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Dreamteck.Splines;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,7 +30,7 @@ public class ShipController : MonoBehaviour
 
 
     // HOVER
-    float hover_height = 1.9f; // 1.8f - .5f;
+    float hover_height = 5f; // 1.8f - .5f;
     float height_above_cast = 5;
 
     // LOGIC VARIABLES
@@ -50,6 +51,7 @@ public class ShipController : MonoBehaviour
     private Vector3 previousGravity;
     private float turn_angle;
     private float turn_speed = 80;
+    SplineProjector splineProjector;
 
     //Shield
     Shield shield;
@@ -62,6 +64,8 @@ public class ShipController : MonoBehaviour
 
     void Awake()
     {
+        splineProjector = GetComponent<SplineProjector>();
+
         Debug.DrawLine(transform.position, transform.position - transform.up * rayCastDistance, Color.green, 50);
         if (Physics.Raycast(transform.position, -transform.up, out downHit, rayCastDistance, trackLayer))
         {
@@ -140,21 +144,49 @@ public class ShipController : MonoBehaviour
         // Comprobar si esta encima de la carretera
         if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, trackLayer))
         {
+            Debug.DrawLine(transform.position + height_above_cast * prev_up, downHit.point, Color.green );
+
             GetTurnInput();
             thisFrameOnTrack = true;
         }
         else if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, invisibleTrackLayer_RIGHT))
         {
-            horizontal_input = -1;
+            Debug.DrawLine(transform.position + height_above_cast * prev_up, downHit.point, Color.red);
+
+
             thisFrameOnTrack = false;
+
+            //float dist = Vector3.Distance(splineProjector.result.position, transform.position);
+            //Debug.Log("Dist = " + dist);
+            //Debug.Log("splineProjector.result.forward = " + splineProjector.result.forward);
+
+            float angle = Vector3.Angle(transform.forward, splineProjector.result.forward);
+            Debug.Log("angle = " + angle);
+
+            if (angle > 30)
+            {
+                float influence = angle / 30 + 1;
+                horizontal_input = -influence;
+            }
+            else horizontal_input = -1;
+
             barrelRollOrientation = -1;
         }
         else if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, invisibleTrackLayer_LEFT))
         {
-            horizontal_input = 1;
+            Debug.DrawLine(transform.position + height_above_cast * prev_up, downHit.point, Color.red);
+
+
             thisFrameOnTrack = false;
             barrelRollOrientation = 1;
+
+
+            float dist = Vector3.Distance(splineProjector.result.position, transform.position);
+            Debug.Log("Dist = " + dist);
+
+            horizontal_input = 1;
         }
+        else return;
 
         TurnShip();
 
