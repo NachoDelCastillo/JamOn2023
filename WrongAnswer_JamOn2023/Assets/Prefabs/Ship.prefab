@@ -373,10 +373,10 @@ BoxCollider:
   m_GameObject: {fileID: 6448674493842473554}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 2.999999, y: 1, z: 1.1042945}
-  m_Center: {x: 0.0000056246663, y: -0.0000023806786, z: -3.4478786}
+  m_Size: {x: 2.999999, y: 1, z: 2.0603871}
+  m_Center: {x: 0.0000025153845, y: -0.00000088053446, z: -2.9698164}
 --- !u!54 &3510069055642060429
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1904,7 +1904,7 @@ MonoBehaviour:
   _targetObject: {fileID: 0}
   _offset: {x: 0, y: 0}
   _rotationOffset: {x: 0, y: 0, z: 0}
-  lastPosition: {x: 538, y: -503, z: 459.9}
+  lastPosition: {x: 337.81, y: 416.41, z: 953.83}
 --- !u!1 &6448674494802832025
 GameObject:
   m_ObjectHideFlags: 0
