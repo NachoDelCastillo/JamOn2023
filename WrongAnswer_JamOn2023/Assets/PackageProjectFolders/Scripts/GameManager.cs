@@ -40,7 +40,12 @@ public class GameManager : MonoBehaviour
         levelNum_Text.gameObject.SetActive(false);
         icon.gameObject.SetActive(false);
     }
-
+    private void Update(){
+        if (isGameOver() && Input.GetKeyDown(KeyCode.Space)){
+            gameOver_bool = false;
+            ChangeScene("level_1");
+        }
+    }
     public void IncreaseEyeIndex()
     {
         eyeIndex++;
