@@ -10,6 +10,8 @@ public class ShipController : MonoBehaviour
     Transform steeringPivot;
     [SerializeField]
     Transform barrelRollPivot;
+    [SerializeField]
+    Transform jumpPivot;
 
     // RAYCAST
     RaycastHit downHit;
@@ -52,8 +54,8 @@ public class ShipController : MonoBehaviour
 
 
     // Jump
-    bool jumping = false;
-    float jumpDuration = .6f;
+    public bool jumping = false;
+    float jumpDuration = .5f;
 
 
     void Awake()
@@ -66,8 +68,9 @@ public class ShipController : MonoBehaviour
             previousGravity = -downHit.normal;
         }
     }
-    private void Start(){
-        shield=GetComponentInChildren<Shield>();
+    private void Start()
+    {
+        shield = GetComponentInChildren<Shield>();
     }
     // INPUT
     bool accelerate_pressed;
@@ -82,13 +85,33 @@ public class ShipController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.started && !jumping)
+        Debug.Log("jump");
+        if (context.started && !jumping && thisFrameOnTrack)
         {
             jumping = true;
+            Jump();
         }
-            
+
         //else if (context.canceled)
     }
+
+    bool jumpRight;
+    void Jump()
+    {
+        jumpRight = !jumpRight;
+
+        int i;
+        if (jumpRight) i = 1;
+        else i = -1;
+
+        barrelRollPivot.DOKill();
+        jumpPivot.DOLocalJump(Vector3.zero, 5, 1, jumpDuration);
+        BarrelRoll(i, jumpDuration - .1f, 1);
+        Invoke("StopJumping", jumpDuration - .1f);
+    }
+
+    void StopJumping()
+    { jumping = false; }
 
     private void Update()
     {
@@ -121,7 +144,7 @@ public class ShipController : MonoBehaviour
         else if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, invisibleTrackLayer_RIGHT))
         {
             horizontal_input = -1;
-            thisFrameOnTrack = false; 
+            thisFrameOnTrack = false;
             barrelRollOrientation = -1;
         }
         else if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, invisibleTrackLayer_LEFT))
@@ -141,7 +164,10 @@ public class ShipController : MonoBehaviour
         // Barrel Roll
         // En caso de que se haya salido de la carretera
         if (lastFrameOnTrack && !thisFrameOnTrack)
+        {
+            barrelRollPivot.DOKill();
             BarrelRoll(barrelRollOrientation, 1, 2);
+        }
 
         // Actualizar valores
         lastFrameOnTrack = thisFrameOnTrack;
@@ -192,7 +218,6 @@ public class ShipController : MonoBehaviour
 
     private void BarrelRoll(int orientation = 1, float time = 1, float numLoops = 1)
     {
-        Debug.Log("orientation = " + orientation);
         barrelRollPivot.DOLocalRotate(new Vector3(0, 0, -360 * orientation * numLoops), time, RotateMode.FastBeyond360);
     }
 }
