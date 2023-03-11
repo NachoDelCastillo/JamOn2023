@@ -5,14 +5,42 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    public bool active = false;
+    public bool active = true;
     MeshRenderer meshRenderer;
+    AudioManager_PK audioManager;
+    Animator myAnimator;
     private void Start(){
         meshRenderer = GetComponent<MeshRenderer>();
-        setActive(active);       
+        audioManager = AudioManager_PK.GetInstance();
+        myAnimator = GetComponent<Animator>();
+        backIdle();
     }
     public void setActive(bool act){
+        if (act == active) return;
+
         active = act;
-        meshRenderer.enabled =  act;
+        if (active) { //si es tru se activa
+            cambio();
+            shieldUp();
+        }
+        else { //si es false se desactiva
+            Invoke("cambio", 1.0f);
+            shieldDown();
+        }
+    }
+    public bool getActive() { return active; }
+
+    private void shieldUp(){
+        myAnimator.Play("ShieldUp");
+    }
+    private void shieldDown(){
+        myAnimator.Play("ShieldDown");
+    }
+    void cambio(){
+        meshRenderer.enabled = active;
+    }
+    void backIdle()
+    {
+        myAnimator.Play("Idle");
     }
 }

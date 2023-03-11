@@ -53,9 +53,6 @@ public class ShipController : MonoBehaviour
     private float turn_speed = 60;
     SplineProjector splineProjector;
 
-    //Shield
-    Shield shield;
-
 
     // Jump
     public bool jumping = false;
@@ -76,7 +73,7 @@ public class ShipController : MonoBehaviour
     }
     private void Start()
     {
-        shield = GetComponentInChildren<Shield>();
+        
     }
     // INPUT
     bool accelerate_pressed;

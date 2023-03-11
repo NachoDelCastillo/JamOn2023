@@ -11,9 +11,9 @@ Material:
   m_Shader: {fileID: 4800000, guid: 534a0777ec461d242b67dc7ed9c48fe9, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap:
     IgnoreProjection: False
@@ -43,7 +43,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _QueueControl: 0
+    - _QueueControl: 1
     - _QueueOffset: 0
     - _enableFillTexture: 1
     - _enableIntersection: 1
@@ -54,20 +54,20 @@ Material:
     - _impactRippleAmplitude: 0
     - _impactRippleMaxRadius: 0.1
     - _impactRippleSpeed: 0
-    - _intersectionMultiplier: 1
-    - _intersectionOffset: 1.176
+    - _intersectionMultiplier: 1.21
+    - _intersectionOffset: 1.5
     - _rimGlowNoiseDensity: 4
     - _rimGlowNoiseSpeed: 1
-    - _rimPulseSpeed: 3
-    - _scanSize: 0.872
-    - _scanSpeed: 1
+    - _rimPulseSpeed: 10
+    - _scanSize: 1
+    - _scanSpeed: 1.74
     m_Colors:
-    - _baseColor: {r: 0.22785088, g: 0.6320754, b: 0.12224099, a: 1}
+    - _baseColor: {r: 0.6792453, g: 0.20825918, b: 0.21757919, a: 1}
     - _fillOffset: {r: 0, g: 0, b: 0, a: 0}
     - _fillTiling: {r: 10, g: 10, b: 0, a: 0}
     - _impactPoint: {r: 0, g: 0, b: 0, a: 0}
     - _impactRippleDirection: {r: 0, g: 0, b: 1, a: 0}
-    - _rimColor: {r: 2.4434454, g: 0.30888835, b: 2.2643447, a: 0}
+    - _rimColor: {r: 0.38679248, g: 0.0035341643, b: 0, a: 0}
     - _rimPower: {r: 1.5, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &726098580683473381

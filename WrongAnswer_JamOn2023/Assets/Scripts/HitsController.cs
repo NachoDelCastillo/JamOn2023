@@ -9,6 +9,11 @@ public class HitsController : MonoBehaviour
 
     float cont = 0f;
 
+    private void Start(){
+        shield = GetComponentInChildren<Shield>();
+    }
+    //Shield
+    Shield shield;
     private void Update()
     {
         if (cont < invinTime)
@@ -22,7 +27,14 @@ public class HitsController : MonoBehaviour
         if (cont > invinTime)
         {
             // Comportamiento de recibir un golpe
-            Debug.Log("MALO");
+            if(shield.getActive()) {
+                shield.setActive(false);
+                Debug.Log("SHIELD DOWN");
+            }
+            else{
+                Debug.Log("MUERTO");
+            }
+           
             cont = 0;
         }
     }
