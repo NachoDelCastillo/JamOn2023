@@ -56,7 +56,7 @@ public class Spawner : MonoBehaviour
     {
         SplineSample nearestPer = new SplineSample();
         track.Project(nearestPer, boss.transform.position);
-        return nearestPer.percent;
+        return nearestPer.percent + 0.1 > 1.0 ? nearestPer.percent + 0.9 : nearestPer.percent + 0.1;
     }
 
     private void SpawnObject(double percentInTrack)

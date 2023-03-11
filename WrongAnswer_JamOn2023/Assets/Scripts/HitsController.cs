@@ -7,6 +7,9 @@ public class HitsController : MonoBehaviour
     [SerializeField]
     float invinTime = 0.1f;
 
+    [SerializeField]
+    CameraShake cam;
+
     float cont = 0f;
 
     private void Start(){
@@ -27,14 +30,15 @@ public class HitsController : MonoBehaviour
         if (cont > invinTime)
         {
             // Comportamiento de recibir un golpe
-            if(shield.getActive()) {
+            cam.Shake(1, 1f);
+            if (shield.getActive()) {
                 shield.setActive(false);
                 Debug.Log("SHIELD DOWN");
             }
             else{
                 Debug.Log("MUERTO");
             }
-           
+
             cont = 0;
         }
     }
