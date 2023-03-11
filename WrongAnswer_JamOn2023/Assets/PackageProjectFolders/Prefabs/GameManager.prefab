@@ -94,7 +94,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5353952611094497908
 RectTransform:
   m_ObjectHideFlags: 0
@@ -143,9 +143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '2
-
-'
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 52e5da1066f22aa49bb4a2beffc42c5c, type: 2}
   m_sharedMaterial: {fileID: 572635584491725194, guid: 52e5da1066f22aa49bb4a2beffc42c5c, type: 2}
@@ -231,7 +229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4090590486840964592
 RectTransform:
   m_ObjectHideFlags: 0
@@ -366,7 +364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7567076227302367038
 RectTransform:
   m_ObjectHideFlags: 0
@@ -655,4 +653,7 @@ MonoBehaviour:
   level_Text: {fileID: 8621253407450473402}
   levelNum_Text: {fileID: 6382528663293279948}
   icon: {fileID: 1180416129884816362}
+  gameOver_Object: {fileID: 0}
+  player: {fileID: 0}
+  eyeList: []
   duringTransition: 0

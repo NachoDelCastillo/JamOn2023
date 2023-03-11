@@ -27,7 +27,9 @@ public class ColorChanger : MonoBehaviour
         //Color newCOlor = Color.Lerp(Color.red, Color.blue, Time.deltaTime);
         //mat.SetColor("_EmissionColor", Color.blue);
 
-        Color middleColor = Color.Lerp(mat.GetColor("_EmissionColor"), targetColor * 5.3f, Time.deltaTime * 2);
+        Color middleColor = Color.Lerp(mat.GetColor("_EmissionColor"), targetColor, Time.deltaTime * 2);
+
+        //middleColor *= 5.3f;
 
         float r = middleColor.r;
         float g = middleColor.g;
@@ -40,7 +42,19 @@ public class ColorChanger : MonoBehaviour
         else if (b > r && b > g)
             middleColor.b = 1;
 
-        mat.SetColor("_EmissionColor", middleColor);
+
+        if (r < g && r < b)
+            middleColor.r = 0;
+        else if (g < r && g < b)
+            middleColor.g = 0;
+        else if (b < r && b < g)
+            middleColor.b = 0;
+
+        middleColor.a = 1;
+
+        Color color = middleColor;
+
+        mat.SetVector("_EmissionColor", color);
     }
 
     private void ChangeColor()
