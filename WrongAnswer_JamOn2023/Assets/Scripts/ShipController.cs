@@ -261,7 +261,6 @@ public class ShipController : MonoBehaviour
         //Debug.Log("Min:" + min_speed);
         //Debug.Log("Max:" + max_speed);
     }
-
     float GetForwardAngle()
     { return Vector3.Angle(transform.forward, splineProjector.result.forward); }
 }
