@@ -45,11 +45,11 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _enableFillTexture: 1
-    - _enableIntersection: 1
-    - _enableRimGlow: 1
-    - _enableRipple: 1
-    - _enableScanLine: 1
+    - _enableFillTexture: 0
+    - _enableIntersection: 0
+    - _enableRimGlow: 0
+    - _enableRipple: 0
+    - _enableScanLine: 0
     - _fill: 0.2
     - _impactRippleAmplitude: 0
     - _impactRippleMaxRadius: 0.1

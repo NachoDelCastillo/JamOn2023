@@ -536,6 +536,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     Standalone: DREAMTECK_SPLINES;UNITY_PIPELINE_URP
+    WebGL: UNITY_PIPELINE_URP;DREAMTECK_SPLINES
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
