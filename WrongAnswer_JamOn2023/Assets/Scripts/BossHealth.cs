@@ -30,7 +30,7 @@ public class BossHealth : MonoBehaviour
         Instantiate(explosion, this.gameObject.GetComponentInChildren<MeshRenderer>().transform);
         GameObject.Find("Ship").GetComponent<ShipController>().enabled = false;
         texto.SetActive(true);
-        Invoke("Kill", 4.0f);
+        Invoke(nameof(Kill), 4.0f);
     }
 
     private void Kill()
