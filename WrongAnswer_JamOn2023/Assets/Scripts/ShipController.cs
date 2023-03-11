@@ -111,7 +111,7 @@ public class ShipController : MonoBehaviour
 
         current_speed = Mathf.Max(current_speed, min_speed);
 
-
+        int barrelRollOrientation = 1;
         // Comprobar si esta encima de la carretera
         if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, trackLayer))
         {
@@ -121,12 +121,14 @@ public class ShipController : MonoBehaviour
         else if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, invisibleTrackLayer_RIGHT))
         {
             horizontal_input = -1;
-            thisFrameOnTrack = false;
+            thisFrameOnTrack = false; 
+            barrelRollOrientation = -1;
         }
         else if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, invisibleTrackLayer_LEFT))
         {
             horizontal_input = 1;
             thisFrameOnTrack = false;
+            barrelRollOrientation = 1;
         }
 
         TurnShip();
@@ -139,7 +141,7 @@ public class ShipController : MonoBehaviour
         // Barrel Roll
         // En caso de que se haya salido de la carretera
         if (lastFrameOnTrack && !thisFrameOnTrack)
-            BarrelRoll(1, 1, 2);
+            BarrelRoll(barrelRollOrientation, 1, 2);
 
         // Actualizar valores
         lastFrameOnTrack = thisFrameOnTrack;
@@ -158,8 +160,6 @@ public class ShipController : MonoBehaviour
         //// INPUT
         //horizontal_input = Input.GetAxis("Horizontal");
         //vertical_input = Input.GetAxis("Vertical");
-
-        Debug.Log("horizontal_input = " + horizontal_input);
 
         // Calcular angulo de rotacion
         turn_angle = turn_speed * Time.deltaTime * horizontal_input;
@@ -190,8 +190,9 @@ public class ShipController : MonoBehaviour
         previousGravity = -downHit.normal;
     }
 
-    private void BarrelRoll(int orientation, float time = 1, float numLoops = 1)
+    private void BarrelRoll(int orientation = 1, float time = 1, float numLoops = 1)
     {
-        barrelRollPivot.DOLocalRotate(new Vector3(0, 0, 360 * orientation * numLoops), time, RotateMode.FastBeyond360);
+        Debug.Log("orientation = " + orientation);
+        barrelRollPivot.DOLocalRotate(new Vector3(0, 0, -360 * orientation * numLoops), time, RotateMode.FastBeyond360);
     }
 }
