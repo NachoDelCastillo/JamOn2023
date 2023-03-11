@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
-{
+public class Obstacle : MonoBehaviour{
+    Pinchos pinchos;
+    private void Awake() 
+    { 
+        pinchos=GetComponent<Pinchos>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         var player = other.GetComponent<HitsController>();
-        if (player)
-        {
-            player.OnHit();
-            if (transform.parent != null)
-                Destroy(transform.parent.gameObject);
-            else
-                Destroy(this.gameObject);
+       
+        if (player){
+            if (pinchos == null || (pinchos != null && !other.GetComponent<ShipController>().jumping)){
+                player.OnHit();
+                if (transform.parent != null)
+                    Destroy(transform.parent.gameObject);
+                else
+                    Destroy(this.gameObject);
+            }
         }
     }
 }
