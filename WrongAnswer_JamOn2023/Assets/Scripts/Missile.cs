@@ -12,7 +12,7 @@ public class Missile : MonoBehaviour
     void Start()
     {
         shot = false;
-        Invoke("Shoot", 4.0f);
+        Invoke("Shoot", 2.3f);
     }
 
     private void Update()
