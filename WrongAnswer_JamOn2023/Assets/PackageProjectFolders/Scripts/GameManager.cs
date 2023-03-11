@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Image icon;
     [SerializeField] GameObject gameOver_Object;
     [SerializeField] GameObject player;
-    [SerializeField] List<Eye> eyeList;
+    List<Eye> eyeList;
     float transitionDuration = 1;
 
     float openValue= 700;
@@ -119,6 +119,9 @@ public class GameManager : MonoBehaviour
         #endregion
 
         Time.timeScale = 1;
+
+        eyeIndex = 0;
+        eyeList.Clear();
 
         if (sceneName != "")
         {

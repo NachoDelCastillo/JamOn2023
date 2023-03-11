@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Eye : MonoBehaviour
 {
-    [SerializeField]
     int id;
     [SerializeField]
     GameObject explosion;
     [SerializeField]
     GameObject boss;
+
+    private void Awake()
+    {
+        id = GameManager.GetInstance().getEyes().Count;
+        GameManager.GetInstance().getEyes().Add(this);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         Missile misil = collision.gameObject.GetComponent<Missile>();
