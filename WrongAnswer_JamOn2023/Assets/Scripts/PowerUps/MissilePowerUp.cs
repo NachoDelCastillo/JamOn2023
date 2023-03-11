@@ -15,6 +15,6 @@ public class MissilePowerUp : PowerUp
         GameObject m = Instantiate(missile, player.transform);
        // m.GetComponent<MissilePowerUp>().enabled = false;
        // m.AddComponent<Missile>();
-        m.gameObject.transform.position = player.transform.position + new Vector3(0, 2, 0);
+        m.gameObject.transform.position = player.transform.position + new Vector3(0, 3, 0);
     }
 }
