@@ -10,7 +10,7 @@ public class BossMovement : MonoBehaviour
 
     SplineFollower splineFollower;
 
-    float maxDistance = 2000;
+    float maxDistance = 500;
 
     private void Awake()
     {
@@ -21,6 +21,6 @@ public class BossMovement : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, player.position);
 
-        splineFollower.followSpeed = (100000/distance);
+        splineFollower.followSpeed = (/*100000*/50000 / distance);
     }
 }
