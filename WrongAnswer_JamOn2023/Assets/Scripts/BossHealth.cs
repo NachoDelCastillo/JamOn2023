@@ -7,6 +7,9 @@ public class BossHealth : MonoBehaviour
     [SerializeField]
     GameObject explosion;
 
+    [SerializeField]
+    GameObject texto;
+
     GameManager gameManager;
     bool killed = false;
     private void Start()
@@ -25,7 +28,9 @@ public class BossHealth : MonoBehaviour
         killed = true;
         this.gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
         Instantiate(explosion, this.gameObject.GetComponentInChildren<MeshRenderer>().transform);
-        Invoke("Kill", 2.0f);
+        GameObject.Find("Ship").GetComponent<ShipController>().enabled = false;
+        texto.SetActive(true);
+        Invoke("Kill", 4.0f);
     }
 
     private void Kill()
