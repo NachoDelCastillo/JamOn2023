@@ -87,8 +87,6 @@ public class Spawner : MonoBehaviour
 
         double maxClamp = (minClamp + 0.5) > 1.0 ? minClamp - 0.5 : minClamp + 0.5;
 
-        //Debug.Log(minClamp);
-
         if (minClamp < 0.5)
             if (!(spawnperc[0] > minClamp && spawnperc[0] < maxClamp))
             {
