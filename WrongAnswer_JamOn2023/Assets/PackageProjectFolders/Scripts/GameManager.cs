@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void setGameOver(bool active){
-        gameOver_Object.SetActive(active);       
+        gameOver_Object.SetActive(active);
         player.GetComponent<ShipController>().enabled= !active;
         gameOver_bool= active;
     }
