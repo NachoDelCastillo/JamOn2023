@@ -50,7 +50,7 @@ public class ShipController : MonoBehaviour
     Quaternion global_orientation;
     private Vector3 previousGravity;
     private float turn_angle;
-    private float turn_speed = 80;
+    private float turn_speed = 60;
     SplineProjector splineProjector;
 
     //Shield
@@ -153,24 +153,12 @@ public class ShipController : MonoBehaviour
         {
             Debug.DrawLine(transform.position + height_above_cast * prev_up, downHit.point, Color.red);
 
-
             thisFrameOnTrack = false;
 
-            //float dist = Vector3.Distance(splineProjector.result.position, transform.position);
-            //Debug.Log("Dist = " + dist);
-            //Debug.Log("splineProjector.result.forward = " + splineProjector.result.forward);
-
-            float angle = Vector3.Angle(transform.forward, splineProjector.result.forward);
-            Debug.Log("angle = " + angle);
-
-            if (angle > 30)
-            {
-                float influence = angle / 30 + 1;
-                horizontal_input = -influence;
-            }
-            else horizontal_input = -1;
-
             barrelRollOrientation = -1;
+
+            horizontal_input = -1;
+            orientationForward = 1;
         }
         else if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, invisibleTrackLayer_LEFT))
         {
@@ -185,6 +173,7 @@ public class ShipController : MonoBehaviour
             Debug.Log("Dist = " + dist);
 
             horizontal_input = 1;
+            orientationForward = -1;
         }
         else return;
 
@@ -202,10 +191,21 @@ public class ShipController : MonoBehaviour
             barrelRollPivot.DOKill();
             BarrelRoll(barrelRollOrientation, 1, 2);
         }
+        // Cuando aterriza
+        else if (!lastFrameOnTrack && thisFrameOnTrack)
+        {
+            lookForward = true;
+            Invoke("StopLookingForward", .3f);
+        }
 
         // Actualizar valores
         lastFrameOnTrack = thisFrameOnTrack;
     }
+    int orientationForward = 1;
+    bool lookForward = false;
+
+    private void StopLookingForward()
+    { lookForward = false; }
 
     float horizontal_input;
     float vertical_input;
@@ -223,6 +223,9 @@ public class ShipController : MonoBehaviour
 
         // Calcular angulo de rotacion
         turn_angle = turn_speed * Time.deltaTime * horizontal_input;
+
+        if (lookForward)
+        { turn_angle = (GetForwardAngle() / 30) * orientationForward; }
 
         global_orientation = Quaternion.Euler(0, turn_angle, 0);
 
@@ -262,4 +265,7 @@ public class ShipController : MonoBehaviour
         //Debug.Log("Min:" + min_speed);
         //Debug.Log("Max:" + max_speed);
     }
+
+    float GetForwardAngle()
+    { return Vector3.Angle(transform.forward, splineProjector.result.forward); }
 }
