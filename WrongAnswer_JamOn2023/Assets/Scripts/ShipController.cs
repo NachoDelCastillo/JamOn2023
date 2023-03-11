@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,9 +29,9 @@ public class ShipController : MonoBehaviour
     // LOGIC VARIABLES
     Vector3 prev_up;
     float current_speed;
-    float max_speed = 200; // 170;
-    float min_speed = 100;
-    float accel = 80f;
+    float max_speed = 250; // 170;
+    float min_speed = 150;
+    float accel = 90f;
     float deccel = 200f;
 
     float smooth_y;
@@ -46,6 +47,13 @@ public class ShipController : MonoBehaviour
 
     //Shield
     Shield shield;
+
+
+    // Jump
+    bool jumping = false;
+    float jumpDuration = .6f;
+
+
     void Awake()
     {
         Debug.DrawLine(transform.position, transform.position - transform.up * rayCastDistance, Color.green, 50);
@@ -72,10 +80,12 @@ public class ShipController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.started)
-            accelerate_pressed = true;
-        else if (context.canceled)
-            accelerate_pressed = false;
+        if (context.started && !jumping)
+        {
+            jumping = true;
+        }
+            
+        //else if (context.canceled)
     }
 
     private void Update()
@@ -164,5 +174,10 @@ public class ShipController : MonoBehaviour
         tilt.SetLookRotation(transform.forward - Vector3.Project(transform.forward, desired_up), desired_up);
         transform.rotation = tilt * global_orientation;
         previousGravity = -downHit.normal;
+    }
+
+    private void BarrelRoll()
+    {
+        barrelRollPivot.DOLocalRotate(new Vector3(0, 0, 360), .5f, RotateMode.FastBeyond360);
     }
 }
