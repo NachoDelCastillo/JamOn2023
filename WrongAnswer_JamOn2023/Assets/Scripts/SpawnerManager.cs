@@ -14,6 +14,8 @@ public class SpawnerManager : MonoBehaviour
     [SerializeField]
     Spawner powerUp_escudo;
 
+    [SerializeField]
+    Shield shield;
 
     float powerUpTimer;
     float powerUpMAXTime = 2;
@@ -21,7 +23,7 @@ public class SpawnerManager : MonoBehaviour
 
     private void Awake()
     {
-        InvokeRepeating("GH", 1, 1);
+        InvokeRepeating("SpawnSomething", 1, 1);
 
         powerUpTimer = powerUpMAXTime;
     }
@@ -51,11 +53,15 @@ public class SpawnerManager : MonoBehaviour
                 if (powerUpTimer < 0)
                 {
                     powerUpTimer = powerUpMAXTime;
-                }
 
+                    if (!shield.active)
+                        powerUp_escudo.SpawnThis();
+                    else
+                        powerUp_cohete.SpawnThis();
+                }
             }
+            else punos.SpawnThis();
         }
 
-        punos.SpawnThis();
     }
 }
