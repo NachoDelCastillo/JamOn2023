@@ -56,7 +56,7 @@ public class Spawner : MonoBehaviour
     {
         SplineSample nearestPer = new SplineSample();
         track.Project(nearestPer, boss.transform.position);
-        return nearestPer.percent + 0.1 > 1.0 ? nearestPer.percent + 0.9 : nearestPer.percent + 0.1;
+        return nearestPer.percent + 0.1 > 1.0 ? nearestPer.percent - 0.9 : nearestPer.percent + 0.1;
     }
 
     private void SpawnObject(double percentInTrack)
@@ -90,19 +90,23 @@ public class Spawner : MonoBehaviour
             double maxClamp = (minClamp + 0.5) > 1.0 ? minClamp - 0.5 : minClamp + 0.5;
 
             if (minClamp < 0.5)
+            {
                 if (!(spawnperc[0] > minClamp && spawnperc[0] < maxClamp))
                 {
                     spawnperc.RemoveAt(0);
                     Destroy(spawns[0]);
                     spawns.RemoveAt(0);
                 }
-                else
-                if (spawnperc[0] < minClamp || spawnperc[0] > maxClamp)
+            }
+            else
+            {
+                if (spawnperc[0] < minClamp && spawnperc[0] > maxClamp)
                 {
                     spawnperc.RemoveAt(0);
                     Destroy(spawns[0]);
                     spawns.RemoveAt(0);
                 }
+            }
         }
     }
 
