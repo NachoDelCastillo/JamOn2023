@@ -81,26 +81,29 @@ public class Spawner : MonoBehaviour
 
     private void DespawnPassedObjects()
     {
-        SplineSample nearestPer = new SplineSample();
-        track.Project(nearestPer, player.transform.position);
-        double minClamp = (nearestPer.percent - 0.1) < 0 ? nearestPer.percent + 0.9 : nearestPer.percent - 0.1;
+        if (spawnperc.Count > 0)
+        {
+            SplineSample nearestPer = new SplineSample();
+            track.Project(nearestPer, player.transform.position);
+            double minClamp = (nearestPer.percent - 0.1) < 0 ? nearestPer.percent + 0.9 : nearestPer.percent - 0.1;
 
-        double maxClamp = (minClamp + 0.5) > 1.0 ? minClamp - 0.5 : minClamp + 0.5;
+            double maxClamp = (minClamp + 0.5) > 1.0 ? minClamp - 0.5 : minClamp + 0.5;
 
-        if (minClamp < 0.5)
-            if (!(spawnperc[0] > minClamp && spawnperc[0] < maxClamp))
-            {
-                spawnperc.RemoveAt(0);
-                Destroy(spawns[0]);
-                spawns.RemoveAt(0);
-            }
-        else
-            if (spawnperc[0] < minClamp || spawnperc[0] > maxClamp)
-            {
-                spawnperc.RemoveAt(0);
-                Destroy(spawns[0]);
-                spawns.RemoveAt(0);
-            }
+            if (minClamp < 0.5)
+                if (!(spawnperc[0] > minClamp && spawnperc[0] < maxClamp))
+                {
+                    spawnperc.RemoveAt(0);
+                    Destroy(spawns[0]);
+                    spawns.RemoveAt(0);
+                }
+                else
+                if (spawnperc[0] < minClamp || spawnperc[0] > maxClamp)
+                {
+                    spawnperc.RemoveAt(0);
+                    Destroy(spawns[0]);
+                    spawns.RemoveAt(0);
+                }
+        }
     }
 
 }
