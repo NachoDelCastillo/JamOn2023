@@ -45,21 +45,21 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _enableFillTexture: 0
-    - _enableIntersection: 0
-    - _enableRimGlow: 0
-    - _enableRipple: 0
-    - _enableScanLine: 0
+    - _enableFillTexture: 1
+    - _enableIntersection: 1
+    - _enableRimGlow: 1
+    - _enableRipple: 1
+    - _enableScanLine: 1
     - _fill: 0.2
     - _impactRippleAmplitude: 0
     - _impactRippleMaxRadius: 0.1
     - _impactRippleSpeed: 0
     - _intersectionMultiplier: 1
-    - _intersectionOffset: 1.07
+    - _intersectionOffset: 1.176
     - _rimGlowNoiseDensity: 4
     - _rimGlowNoiseSpeed: 1
     - _rimPulseSpeed: 3
-    - _scanSize: 0.8
+    - _scanSize: 0.872
     - _scanSpeed: 1
     m_Colors:
     - _baseColor: {r: 0.22785088, g: 0.6320754, b: 0.12224099, a: 1}

@@ -25,14 +25,7 @@ public class Timer : MonoBehaviour{
     }
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.GetComponent<ShipController>() != null){            
-            if(timer < myBestTime||myBestTime==-1){
-                myBestTime= timer;
-                guardar.record = myBestTime;
-                guardar.Safe();
-                actualizarRecord();
-            }
-            timer = 0.0f;
-            actualizarTimer();
+           stopTimer();
         }
     }
     public void actualizarRecord(){
@@ -43,5 +36,16 @@ public class Timer : MonoBehaviour{
     }
     public void actualizarTimer() {
         textTimer.text = timer.ToString();
+    }
+    public void stopTimer(){
+        if (timer < myBestTime || myBestTime == -1)
+        {
+            myBestTime = timer;
+            guardar.record = myBestTime;
+            guardar.Safe();
+            actualizarRecord();
+        }
+        timer = 0.0f;
+        actualizarTimer();
     }
 }
