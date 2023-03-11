@@ -50,8 +50,6 @@ public class ColorChanger : MonoBehaviour
         else if (b < r && b < g)
             middleColor.b = 0;
 
-        middleColor.a = 1;
-
         Color color = middleColor;
 
         mat.SetVector("_EmissionColor", color);
