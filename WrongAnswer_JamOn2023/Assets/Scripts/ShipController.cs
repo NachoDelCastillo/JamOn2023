@@ -135,6 +135,7 @@ public class ShipController : MonoBehaviour
         //horizontal_input = Input.GetAxis("Horizontal");
         //vertical_input = Input.GetAxis("Vertical");
 
+        Debug.Log("horizontal_input = " + horizontal_input);
 
         // Calcular angulo de rotacion
         turn_angle = turn_speed * Time.deltaTime * horizontal_input;
