@@ -38,18 +38,23 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (cont > nextSpawn)
-        {
-            SpawnObject(GetWhereToSpawnPercent());
-            cont = 0;
-            nextSpawn = UnityEngine.Random.Range(tMin, tMax);
-        }
-        else
-        {
-            cont += Time.deltaTime;
-        }
+        //if (cont > nextSpawn)
+        //{
+        //    SpawnObject(GetWhereToSpawnPercent());
+        //    cont = 0;
+        //    nextSpawn = UnityEngine.Random.Range(tMin, tMax);
+        //}
+        //else
+        //{
+        //    cont += Time.deltaTime;
+        //}
 
         DespawnPassedObjects();
+    }
+
+    public void SpawnThis()
+    {
+        SpawnObject(GetWhereToSpawnPercent());
     }
 
     private double GetWhereToSpawnPercent()
