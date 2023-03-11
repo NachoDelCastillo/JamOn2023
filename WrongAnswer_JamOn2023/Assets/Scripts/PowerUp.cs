@@ -21,7 +21,6 @@ public class PowerUp : MonoBehaviour{
     private void OnTriggerEnter(Collider other){
         if(other.gameObject.GetComponent<ShipController>() != null) {
             Power(other.gameObject);
-            //Debug.Log("PLAYER COGE POWER UP");
             this.enabled = false;
             this.gameObject.SetActive(false);
         }

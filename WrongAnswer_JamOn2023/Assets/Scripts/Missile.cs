@@ -20,21 +20,10 @@ public class Missile : MonoBehaviour
         if (shot)
         {
             int i = GameManager.GetInstance().GetEyeIndex();
+            Debug.Log(i);
             transform.position = Vector3.MoveTowards(transform.position, GameManager.GetInstance().getEyes()[i].transform.position, vel);
         }
     }
-
-    //private void FixedUpdate()
-    //{
-    //    if (shot)
-    //    {
-    //        int i = GameManager.GetInstance().GetEyeIndex();
-    //        Vector3 direction = GameManager.GetInstance().getEyes()[i].transform.position - this.gameObject.transform.position;
-    //        this.transform.LookAt(direction);
-    //        direction.Normalize();
-    //        this.gameObject.GetComponent<Rigidbody>().AddForce(direction * vel, ForceMode.VelocityChange);
-    //    }
-    //}
     public void Shoot()
     {
         shot = true;
