@@ -20,6 +20,8 @@ public class ShipController : MonoBehaviour
     LayerMask invisibleTrackLayer_RIGHT;
     [SerializeField]
     LayerMask invisibleTrackLayer_LEFT;
+    bool lastFrameOnTrack = true;
+    bool thisFrameOnTrack = true;
 
 
     // HOVER
@@ -114,14 +116,17 @@ public class ShipController : MonoBehaviour
         if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, trackLayer))
         {
             GetTurnInput();
+            thisFrameOnTrack = true;
         }
         else if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, invisibleTrackLayer_RIGHT))
         {
             horizontal_input = -1;
+            thisFrameOnTrack = false;
         }
         else if (Physics.Raycast(transform.position + height_above_cast * prev_up, -prev_up, out downHit, rayCastDistance, invisibleTrackLayer_LEFT))
         {
             horizontal_input = 1;
+            thisFrameOnTrack = false;
         }
 
         TurnShip();
@@ -129,6 +134,15 @@ public class ShipController : MonoBehaviour
         AdjustOrientation();
         //checkGroundMovement();
         MoveShip();
+
+
+        // Barrel Roll
+        // En caso de que se haya salido de la carretera
+        if (lastFrameOnTrack && !thisFrameOnTrack)
+            BarrelRoll(1, 1, 2);
+
+        // Actualizar valores
+        lastFrameOnTrack = thisFrameOnTrack;
     }
 
     float horizontal_input;
@@ -176,8 +190,8 @@ public class ShipController : MonoBehaviour
         previousGravity = -downHit.normal;
     }
 
-    private void BarrelRoll()
+    private void BarrelRoll(int orientation, float time = 1, float numLoops = 1)
     {
-        barrelRollPivot.DOLocalRotate(new Vector3(0, 0, 360), .5f, RotateMode.FastBeyond360);
+        barrelRollPivot.DOLocalRotate(new Vector3(0, 0, 360 * orientation * numLoops), time, RotateMode.FastBeyond360);
     }
 }
