@@ -20,7 +20,6 @@ public class Missile : MonoBehaviour
         if (shot)
         {
             int i = GameManager.GetInstance().GetEyeIndex();
-            Debug.Log(i);
             transform.position = Vector3.MoveTowards(transform.position, GameManager.GetInstance().getEyes()[i].transform.position, vel);
         }
     }
@@ -31,6 +30,7 @@ public class Missile : MonoBehaviour
     public void Explode()
     {
         shot=false;
+        this.gameObject.GetComponentInParent<ShipController>().IncreaseVel();
         this.gameObject.SetActive(false);
     }
 }

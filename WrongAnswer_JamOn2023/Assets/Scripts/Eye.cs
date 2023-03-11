@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Eye : MonoBehaviour
 {
+    [SerializeField]
+    int id;
     private void OnCollisionEnter(Collision collision)
     {
         Missile misil = collision.gameObject.GetComponent<Missile>();
-        if (misil != null)
+        if (misil != null && id==GameManager.GetInstance().GetEyeIndex())
         {
             GameManager.GetInstance().IncreaseEyeIndex();
             misil.Explode();

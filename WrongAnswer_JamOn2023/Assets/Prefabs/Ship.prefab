@@ -278,6 +278,7 @@ MonoBehaviour:
   steeringPivot: {fileID: 5429178667923816741}
   barrelRollPivot: {fileID: 5355604455500693548}
   jumpPivot: {fileID: 5037185067924751859}
+  increase: 15
   trackLayer:
     serializedVersion: 2
     m_Bits: 128

@@ -12,6 +12,8 @@ public class ShipController : MonoBehaviour
     Transform barrelRollPivot;
     [SerializeField]
     Transform jumpPivot;
+    [SerializeField]
+    float increase;
 
     // RAYCAST
     RaycastHit downHit;
@@ -219,5 +221,13 @@ public class ShipController : MonoBehaviour
     private void BarrelRoll(int orientation = 1, float time = 1, float numLoops = 1)
     {
         barrelRollPivot.DOLocalRotate(new Vector3(0, 0, -360 * orientation * numLoops), time, RotateMode.FastBeyond360);
+    }
+
+    public void IncreaseVel()
+    {
+        min_speed += increase;
+        max_speed += increase;
+        //Debug.Log("Min:" + min_speed);
+        //Debug.Log("Max:" + max_speed);
     }
 }
