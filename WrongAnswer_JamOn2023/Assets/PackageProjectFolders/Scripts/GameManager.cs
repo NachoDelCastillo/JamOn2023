@@ -14,14 +14,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text level_Text;
     [SerializeField] TMP_Text levelNum_Text;
     [SerializeField] Image icon;
-
+    [SerializeField] GameObject gameOver_Object;
+    [SerializeField] GameObject player;
     [SerializeField] List<Eye> eyeList;
     float transitionDuration = 1;
 
     float openValue= 700;
     float closedValue = 210;
     int eyeIndex = 0;
-
+    bool gameOver_bool = false;
     // Devuelve true si se esta en medio de una transicion
     [HideInInspector] public bool duringTransition = false;
 
@@ -54,6 +55,14 @@ public class GameManager : MonoBehaviour
         return eyeList;
     }
 
+    public void setGameOver(bool active){
+        gameOver_Object.SetActive(active);       
+        player.GetComponent<ShipController>().enabled= !active;
+        gameOver_bool= active;
+    }
+    public bool isGameOver() {
+        return gameOver_bool;
+    }
     #region Change Scene
     public void ChangeScene(string sceneName)
     {

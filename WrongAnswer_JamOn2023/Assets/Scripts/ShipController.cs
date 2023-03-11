@@ -58,7 +58,6 @@ public class ShipController : MonoBehaviour
     public bool jumping = false;
     float jumpDuration = .5f;
 
-
     void Awake()
     {
         splineProjector = GetComponent<SplineProjector>();

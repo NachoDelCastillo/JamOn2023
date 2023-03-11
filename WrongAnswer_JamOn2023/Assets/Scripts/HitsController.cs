@@ -11,12 +11,14 @@ public class HitsController : MonoBehaviour
     CameraShake cam;
 
     float cont = 0f;
+    //Shield
+    Shield shield;
+    GameManager gameManager;
 
     private void Start(){
         shield = GetComponentInChildren<Shield>();
-    }
-    //Shield
-    Shield shield;
+        gameManager=GameManager.GetInstance();
+    }   
     private void Update()
     {
         if (cont < invinTime)
@@ -37,6 +39,7 @@ public class HitsController : MonoBehaviour
             }
             else{
                 Debug.Log("MUERTO");
+                gameManager.setGameOver(true);
             }
 
             cont = 0;

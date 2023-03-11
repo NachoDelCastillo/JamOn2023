@@ -32,9 +32,11 @@ public class Shield : MonoBehaviour
 
     private void shieldUp(){
         myAnimator.Play("ShieldUp");
+        audioManager.Play("ShieldUp", 20.0f);
     }
     private void shieldDown(){
         myAnimator.Play("ShieldDown");
+        audioManager.Play("ShieldDown", 20.0f);
     }
     void cambio(){
         meshRenderer.enabled = active;

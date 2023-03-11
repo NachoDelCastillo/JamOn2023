@@ -80,3 +80,17 @@ MonoBehaviour:
     pitch: 1
     music: 0
     source: {fileID: 0}
+  - name: ShieldDown
+    clip: {fileID: 8300000, guid: 1b3f92b1e54a96044a62d8213607d182, type: 3}
+    volume: 1
+    maxVolume: 0.5
+    pitch: 1
+    music: 0
+    source: {fileID: 0}
+  - name: ShieldUp
+    clip: {fileID: 8300000, guid: a7c66eb8c3349ea469987949bf2451b8, type: 3}
+    volume: 1
+    maxVolume: 0.5
+    pitch: 1
+    music: 0
+    source: {fileID: 0}
