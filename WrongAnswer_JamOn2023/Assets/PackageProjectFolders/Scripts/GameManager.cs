@@ -14,10 +14,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text level_Text;
     [SerializeField] TMP_Text levelNum_Text;
     [SerializeField] Image icon;
+
+    [SerializeField] List<Eye> eyeList;
     float transitionDuration = 1;
 
     float openValue= 700;
     float closedValue = 210;
+    int eyeIndex = 0;
 
     // Devuelve true si se esta en medio de una transicion
     [HideInInspector] public bool duringTransition = false;
@@ -35,6 +38,20 @@ public class GameManager : MonoBehaviour
         level_Text.gameObject.SetActive(false);
         levelNum_Text.gameObject.SetActive(false);
         icon.gameObject.SetActive(false);
+    }
+
+    public void IncreaseEyeIndex()
+    {
+        eyeIndex++;
+        if (eyeIndex >= eyeList.Count) eyeIndex = eyeList.Count;
+    }
+    public int GetEyeIndex()
+    {
+        return eyeIndex;
+    }
+    public List<Eye> getEyes()
+    {
+        return eyeList;
     }
 
     #region Change Scene

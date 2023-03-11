@@ -12,12 +12,16 @@ public class PowerUp : MonoBehaviour{
     void Start(){        
     }
     private void Update(){
-        transform.Rotate(ejeRotacion,rotacion);
+        RotatePowerUp();
+    }
+    public void RotatePowerUp()
+    {
+        transform.Rotate(ejeRotacion, rotacion);
     }
     private void OnTriggerEnter(Collider other){
         if(other.gameObject.GetComponent<ShipController>() != null) {
             Power(other.gameObject);
-            Debug.Log("PLAYER COGE POWER UP");
+            //Debug.Log("PLAYER COGE POWER UP");
             this.enabled = false;
             this.gameObject.SetActive(false);
         }
