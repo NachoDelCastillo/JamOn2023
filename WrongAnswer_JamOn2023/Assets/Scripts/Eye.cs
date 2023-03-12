@@ -13,6 +13,14 @@ public class Eye : MonoBehaviour
     [SerializeField]
     GameObject boss;
 
+    [SerializeField]
+    Material functionalEye;
+    [SerializeField]
+    Material brokenEye;
+
+    [SerializeField]
+    MeshRenderer[] breakTheseParts;
+
     ShipController ship;
 
     private void Awake()

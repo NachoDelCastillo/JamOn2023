@@ -696,6 +696,7 @@ MonoBehaviour:
   explosion: {fileID: 6290860960874357650, guid: 44195c3b5492ee441bd63c8c2db69b1b, type: 3}
   explosion_2: {fileID: 0}
   boss: {fileID: 0}
+  brokenEye: {fileID: 0}
 --- !u!1 &6179157732379207197
 GameObject:
   m_ObjectHideFlags: 0
