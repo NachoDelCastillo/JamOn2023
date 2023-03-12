@@ -169,7 +169,7 @@ public class ShipController : MonoBehaviour
 
 
             float dist = Vector3.Distance(splineProjector.result.position, transform.position);
-            Debug.Log("Dist = " + dist);
+            // Debug.Log("Dist = " + dist);
 
             horizontal_input = 1;
             orientationForward = -1;
@@ -266,4 +266,10 @@ public class ShipController : MonoBehaviour
     }
     float GetForwardAngle()
     { return Vector3.Angle(transform.forward, splineProjector.result.forward); }
+
+    public bool IsOnWall()
+    {
+        Debug.Log(thisFrameOnTrack);
+        return !thisFrameOnTrack;
+    }
 }
