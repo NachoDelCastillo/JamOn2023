@@ -34,19 +34,12 @@ public class CaseCell : MonoBehaviour
 
     private int Randomize(){
         int ind = 0;
-        int rand = Random.Range(0, 100);
+        int rand = Random.Range(0, 101);
         for (int i = 0; i < chances.Length; i++){
             if (rand <= chances[i]) { idList = i; return i; }
             ind++;
         }
         idList = ind;
         return ind;
-    }
-
-    //private void Update(){
-    //    if (transform.position.x < 0) {
-    //        caseScroll.generateCell();
-    //        Destroy(transform.parent.gameObject); 
-    //    }
-    //}
+    }   
 }
