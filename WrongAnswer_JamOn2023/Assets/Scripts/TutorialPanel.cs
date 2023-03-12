@@ -16,12 +16,6 @@ public class TutorialPanel : MonoBehaviour
         image=gameObject.GetComponentInChildren<Image>();
         Invoke("Fade", 4.0f);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void Fade()
     {
         text.DOFade(0, 1.5f);
