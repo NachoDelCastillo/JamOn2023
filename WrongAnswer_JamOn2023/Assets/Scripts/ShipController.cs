@@ -72,7 +72,7 @@ public class ShipController : MonoBehaviour
     }
     private void Start()
     {
-        
+        GameManager.GetInstance().SetPlayer(this.gameObject);
     }
     // INPUT
     bool accelerate_pressed;

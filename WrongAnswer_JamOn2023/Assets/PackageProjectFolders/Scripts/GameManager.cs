@@ -47,6 +47,14 @@ public class GameManager : MonoBehaviour
             ChangeScene("level_1");
         }
     }
+    public void SetGameOverPanel(GameObject go)
+    {
+        gameOver_Object = go;
+    }
+    public void SetPlayer(GameObject go)
+    {
+        player = go;
+    }
     public int GetLevel()
     {
         return level;
