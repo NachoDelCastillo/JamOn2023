@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class getReward : MonoBehaviour{
 
@@ -15,19 +16,17 @@ public class getReward : MonoBehaviour{
            
             GameManager.GetInstance().setReward(cmp.idList, cmp.id);
             gameObject.SetActive(false);
+
             cmp.transform.parent.GetChild(1).gameObject.SetActive(true);
-                       
-        }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        var cmp = collision.GetComponent<AudioSource>();
+            var t = cmp.GetComponent<AudioSource>();
 
-        if (cmp != null)
-        {
-            cmp.pitch = Random.Range(2.9f, 3f);
-            cmp.Play();
+            if (t != null)
+            {
+                t.pitch = Random.Range(2.9f, 3f);
+                t.Play();
+            }
+
         }
     }
 }
