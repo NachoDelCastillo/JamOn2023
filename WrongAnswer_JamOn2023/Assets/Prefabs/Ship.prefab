@@ -24,9 +24,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461006033}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.4, y: 0, z: -10.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 7.1054265e-15, z: 2.2204458e-15, w: 1}
+  m_LocalPosition: {x: 16.399876, y: 0.000038012255, z: -10.499932}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1113582622685794179}
@@ -155,9 +155,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029769001}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.4, y: 0, z: -10.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 7.1054265e-15, z: 2.2204458e-15, w: 1}
+  m_LocalPosition: {x: -16.399876, y: 0.00005304604, z: -10.500054}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1113582622685794179}
@@ -5420,6 +5420,7 @@ MonoBehaviour:
   barrelRollPivot: {fileID: 5355604455500693548}
   jumpPivot: {fileID: 5037185067924751859}
   increase: 15
+  particlesPowerUp: {fileID: 0}
   trackLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -5506,6 +5507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invinTime: 1
   cam: {fileID: 0}
+  shipGfx: {fileID: 306224787352212793}
 --- !u!65 &7138949500818484266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7305,6 +7307,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 06845a4d217b98e43850e559282b0aa0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90df85f9a3ff66b408e3a9be13d7287a, type: 3}
+--- !u!1 &306224787352212793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 90df85f9a3ff66b408e3a9be13d7287a, type: 3}
+  m_PrefabInstance: {fileID: 648100547819300968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1113582622685794179 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90df85f9a3ff66b408e3a9be13d7287a, type: 3}

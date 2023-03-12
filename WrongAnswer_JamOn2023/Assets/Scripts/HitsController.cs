@@ -6,11 +6,17 @@ public class HitsController : MonoBehaviour
 {
     [SerializeField]
     float invinTime = 0.1f;
+    [SerializeField]
+    float invinEffectTime = 0.05f;
 
     [SerializeField]
     CameraShake cam;
 
+    [SerializeField]
+    GameObject shipGfx;
+
     float cont = 0f;
+    float effectCont = 0f;
     //Shield
     Shield shield;
     GameManager gameManager;
@@ -23,7 +29,19 @@ public class HitsController : MonoBehaviour
     {
         if (cont < invinTime)
         {
+            effectCont += Time.deltaTime;
+            if (effectCont > invinEffectTime)
+            {
+                shipGfx.SetActive(!shipGfx.activeSelf);
+                effectCont = 0;
+            }
+
             cont += Time.deltaTime;
+            if (cont > invinTime)
+            {
+                shipGfx.SetActive(true);
+                effectCont = 0;
+            }
         }
     }
 
