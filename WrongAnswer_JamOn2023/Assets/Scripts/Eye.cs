@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,19 @@ public class Eye : MonoBehaviour
     [SerializeField]
     GameObject boss;
 
+    ShipController ship;
+
     private void Awake()
     {
         id = GameManager.GetInstance().getEyes().Count;
         GameManager.GetInstance().getEyes().Add(this);
+
+        ship = FindObjectOfType<ShipController>();
+    }
+
+    private void Update()
+    {
+        transform.LookAt(ship.transform.position);
     }
 
     private void OnCollisionEnter(Collision collision)
