@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     // Devuelve true si se esta en medio de una transicion
     [HideInInspector] public bool duringTransition = false;
 
+    Vector2Int Rewards;
+
     public static GameManager instance;
     public static GameManager GetInstance() { return instance; }
     private void Awake()
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
     public void SetPlayer(GameObject go)
     {
         player = go;
+        go.GetComponent<SkinManager>().setActivatedSkin(Rewards);
     }
     public int GetLevel()
     {
@@ -83,6 +86,10 @@ public class GameManager : MonoBehaviour
     public bool isGameOver()
     {
         return gameOver_bool;
+    }
+    public void setReward(int idList,int id){
+        Rewards.x = idList;
+        Rewards.y = id;
     }
     #region Change Scene
     public void ChangeScene(string sceneName)

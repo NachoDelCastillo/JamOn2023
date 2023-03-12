@@ -5380,6 +5380,7 @@ GameObject:
   - component: {fileID: 7138949500818484266}
   - component: {fileID: 3510069055642060429}
   - component: {fileID: 5872921833519068675}
+  - component: {fileID: 6269545203728499703}
   m_Layer: 2
   m_Name: Ship
   m_TagString: Untagged
@@ -5506,6 +5507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invinTime: 1
+  invinEffectTime: 0.05
   cam: {fileID: 0}
   shipGfx: {fileID: 306224787352212793}
 --- !u!65 &7138949500818484266
@@ -7049,6 +7051,23 @@ MonoBehaviour:
   _offset: {x: 0, y: 0}
   _rotationOffset: {x: 0, y: 0, z: 0}
   lastPosition: {x: 538, y: -503, z: 459.9}
+--- !u!114 &6269545203728499703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6448674493842473554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255e385c8377a2241b06e7482f35b0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skins:
+  - mallas:
+    - {fileID: 6448674494802832025}
+  - mallas:
+    - {fileID: 306224787352212793}
 --- !u!1 &6448674494802832025
 GameObject:
   m_ObjectHideFlags: 0
@@ -7060,7 +7079,6 @@ GameObject:
   - component: {fileID: 6448674494802832024}
   - component: {fileID: 6448674494802832026}
   - component: {fileID: 6448674494802832027}
-  - component: {fileID: 1036465175}
   m_Layer: 2
   m_Name: Mesh
   m_TagString: Untagged
@@ -7077,8 +7095,8 @@ Transform:
   m_GameObject: {fileID: 6448674494802832025}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5355604455500693548}
   m_RootOrder: 1
@@ -7133,19 +7151,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1036465175
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6448674494802832025}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 11.599691, y: 10.107762, z: 2.7250392}
-  m_Center: {x: -1.2001536, y: 0.00000047683716, z: 1.2020983}
 --- !u!1 &6448674495158661342
 GameObject:
   m_ObjectHideFlags: 0
@@ -7292,6 +7297,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 90df85f9a3ff66b408e3a9be13d7287a, type: 3}
       propertyPath: m_Name
       value: A-IR_Wing
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 90df85f9a3ff66b408e3a9be13d7287a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7491061605487824234, guid: 90df85f9a3ff66b408e3a9be13d7287a, type: 3}
       propertyPath: m_Materials.Array.data[0]

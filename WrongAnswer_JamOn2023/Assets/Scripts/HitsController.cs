@@ -12,8 +12,7 @@ public class HitsController : MonoBehaviour
     [SerializeField]
     CameraShake cam;
 
-    [SerializeField]
-    GameObject shipGfx;
+    GameObject shipGfx=null;
 
     float cont = 0f;
     float effectCont = 0f;
@@ -23,7 +22,7 @@ public class HitsController : MonoBehaviour
 
     private void Start(){
         shield = GetComponentInChildren<Shield>();
-        gameManager=GameManager.GetInstance();
+        gameManager=GameManager.GetInstance();      
     }   
     private void Update()
     {
@@ -65,5 +64,8 @@ public class HitsController : MonoBehaviour
             return true;
         }
         return false;
+    }
+    public void setGfx(GameObject x){
+        shipGfx = x;
     }
 }
