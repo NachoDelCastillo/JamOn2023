@@ -100,6 +100,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScene(int level)
     {
+        if (level == 0) return;
         level_Text.gameObject.SetActive(true);
 
         this.level = level;

@@ -5401,7 +5401,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6448674493842473554}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 538, y: -503, z: 459.9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7055,7 +7055,7 @@ MonoBehaviour:
   _targetObject: {fileID: 0}
   _offset: {x: 0, y: 0}
   _rotationOffset: {x: 0, y: 0, z: 0}
-  lastPosition: {x: 538, y: -503, z: 459.9}
+  lastPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &6269545203728499703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7091,7 +7091,7 @@ GameObject:
   - component: {fileID: 6448674494802832026}
   - component: {fileID: 6448674494802832027}
   m_Layer: 2
-  m_Name: Mesh
+  m_Name: LaOg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7307,7 +7307,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7a48a5d36dc894b4292f96390c202c48, type: 2}
     - target: {fileID: 919132149155446097, guid: 90df85f9a3ff66b408e3a9be13d7287a, type: 3}
       propertyPath: m_Name
-      value: A-IR_Wing
+      value: LaDeAntes
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 90df85f9a3ff66b408e3a9be13d7287a, type: 3}
       propertyPath: m_IsActive
@@ -7485,7 +7485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1bed95d7a4b987442be09c28c609cb7d, type: 3}
       propertyPath: m_Name
-      value: Space_ship_9
+      value: LaNueva
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1bed95d7a4b987442be09c28c609cb7d, type: 3}
       propertyPath: m_IsActive
@@ -7588,7 +7588,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: dee133e66793a184886858d4a69ed0dc, type: 2}
     - target: {fileID: 919132149155446097, guid: 7e47141a22fb4904598558fbd51689b7, type: 3}
       propertyPath: m_Name
-      value: Spaceship
+      value: LaRoja
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7e47141a22fb4904598558fbd51689b7, type: 3}
       propertyPath: m_IsActive
@@ -7675,7 +7675,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 36b97d0eb0f344540ae7c6ecaec5642b, type: 2}
     - target: {fileID: 919132149155446097, guid: 4fb39b571fa91e249b3da3239dea6a63, type: 3}
       propertyPath: m_Name
-      value: SpaceShip
+      value: Mosquito
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4fb39b571fa91e249b3da3239dea6a63, type: 3}
       propertyPath: m_IsActive
