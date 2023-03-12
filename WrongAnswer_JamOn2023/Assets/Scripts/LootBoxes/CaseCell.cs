@@ -18,6 +18,10 @@ public class CaseCell : MonoBehaviour
     [SerializeField]
     private Color[] colors;
 
+    CaseScroll caseScroll;
+    private void Start(){
+        caseScroll = GetComponentInParent<CaseScroll>();
+    }
     public void SetUp(){
         int index = Randomize();
 
@@ -33,5 +37,11 @@ public class CaseCell : MonoBehaviour
             ind++;
         } 
         return ind;
+    }
+    private void Update(){
+        if (transform.position.x < 0) {
+            caseScroll.generateCell();
+            Destroy(gameObject); 
+        }
     }
 }
