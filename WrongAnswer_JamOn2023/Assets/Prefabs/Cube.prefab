@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5cb158e2a0cb04fa13ce7404821007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotacion: 5
+  rotacion: 2.5
   missile: {fileID: 8854619882081110099, guid: fcd8b1f6f8d7d3143a2113e5ce73f420, type: 3}
 --- !u!54 &2852042982093794002
 Rigidbody:
