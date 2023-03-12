@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Image icon;
     [SerializeField] GameObject gameOver_Object;
     [SerializeField] GameObject player;
-    List<Eye> eyeList = new List<Eye>();
+    [SerializeField] List<Eye> eyeList = new List<Eye>();
     float transitionDuration = 1;
     int level;
 
