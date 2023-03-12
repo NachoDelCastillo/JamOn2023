@@ -52,7 +52,9 @@ public class AudioManager_PK : MonoBehaviour
         switch (sceneName)
         {
             case "MainMenu_Scene":
-                Stop("Gameplay_Music");
+                Stop("Gameplay_Music_1");
+                Stop("Gameplay_Music_2");
+                Stop("Gameplay_Music_3");
                 Play("MainMenu_Music", 1);
                 break;
             default:

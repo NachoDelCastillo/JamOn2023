@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] RectTransform left;
     [SerializeField] RectTransform right;
     [SerializeField] TMP_Text level_Text;
-    [SerializeField] TMP_Text levelNum_Text;
     [SerializeField] Image icon;
     [SerializeField] GameObject gameOver_Object;
     [SerializeField] GameObject player;
@@ -38,7 +37,7 @@ public class GameManager : MonoBehaviour
 
         // Todos los elementos de la transicion empiezan inactivos
         level_Text.gameObject.SetActive(false);
-        levelNum_Text.gameObject.SetActive(false);
+        //levelNum_Text.gameObject.SetActive(false);
         icon.gameObject.SetActive(false);
     }
     private void Update()
@@ -95,13 +94,17 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(int level)
     {
         level_Text.gameObject.SetActive(true);
-        levelNum_Text.gameObject.SetActive(true);
-        levelNum_Text.text = level.ToString();
 
-        // this.level = level;
+        this.level = level;
 
+        if (level == 1)
+            level_Text.text = "STaNDaRD";
+        else if (level == 2)
+            level_Text.text = "GiGaCHaD";
+        else if (level == 3)
+            level_Text.text = "DRiFTeaDoR";
 
-            StartCoroutine(ChangeSceneCoroutine(1, ""));
+        StartCoroutine(ChangeSceneCoroutine(1, ""));
     }
 
     float transitionsMove;
@@ -160,7 +163,6 @@ public class GameManager : MonoBehaviour
 
         // Poner todo de vuelta a false
         level_Text.gameObject.SetActive(false);
-        levelNum_Text.gameObject.SetActive(false);
         icon.gameObject.SetActive(false);
     }
 
