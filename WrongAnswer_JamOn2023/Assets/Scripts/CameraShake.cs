@@ -7,22 +7,10 @@ public class CameraShake : MonoBehaviour
     float strengh = 1;
     float time = 0;
 
-    Camera cam;
-    ShipController player;
-
-    float ogFOV;
-
     [SerializeField]
     float fovDecrease;
 
     float maxTime = 0;
-
-    private void Start()
-    {
-        cam = GetComponent<Camera>();
-        ogFOV = cam.fieldOfView;
-        player = GetComponentInParent<FollowCamera>().GetPlayer();
-    }
 
     private void Update()
     {
