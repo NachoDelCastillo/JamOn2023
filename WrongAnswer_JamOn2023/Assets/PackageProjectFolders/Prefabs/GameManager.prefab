@@ -651,8 +651,8 @@ MonoBehaviour:
   left: {fileID: 8485692226985410821}
   right: {fileID: 1895215293}
   level_Text: {fileID: 8621253407450473402}
-  levelNum_Text: {fileID: 6382528663293279948}
   icon: {fileID: 1180416129884816362}
   gameOver_Object: {fileID: 0}
   player: {fileID: 0}
+  eyeList: []
   duringTransition: 0
