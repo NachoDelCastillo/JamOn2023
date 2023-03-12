@@ -75,7 +75,6 @@ public class Missile : MonoBehaviour
 
     public void Shoot()
     {
-
         shot = true;
         eyeIndex = GameManager.GetInstance().GetEyeIndex();
 
