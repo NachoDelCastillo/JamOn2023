@@ -63,7 +63,6 @@ public class ShipController : MonoBehaviour
     void Awake()
     {
         splineProjector = GetComponent<SplineProjector>();
-        par_powerup = particlesPowerUp.GetComponent<ParticleSystem>();
 
         Debug.DrawLine(transform.position, transform.position - transform.up * rayCastDistance, Color.green, 50);
         if (Physics.Raycast(transform.position, -transform.up, out downHit, rayCastDistance, trackLayer))
