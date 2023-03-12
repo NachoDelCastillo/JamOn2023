@@ -226,7 +226,7 @@ public class ShipController : MonoBehaviour
         global_orientation = Quaternion.Euler(0, turn_angle, 0);
 
         // Inclinacion lateral
-        float lateralRotation = Mathf.LerpAngle(steeringPivot.localRotation.eulerAngles.z, -turn_angle * 20, Time.deltaTime * 5);
+        float lateralRotation = Mathf.LerpAngle(steeringPivot.localRotation.eulerAngles.z, -turn_angle * 50, Time.deltaTime * 5);
         steeringPivot.localRotation = Quaternion.Euler(0, 0, lateralRotation);
     }
 

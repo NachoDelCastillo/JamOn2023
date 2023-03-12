@@ -18,7 +18,7 @@ public class SpawnerManager : MonoBehaviour
     Shield shield;
 
     float powerUpTimer;
-    float powerUpMAXTime = 2;
+    float powerUpMAXTime = 10;
 
 
     private void Awake()
@@ -36,7 +36,10 @@ public class SpawnerManager : MonoBehaviour
 
     void SpawnSomething()
     {
-        int randomInt = Random.Range(0, 3 + 1);
+        powerUp_cohete.SpawnThis();
+        return;
+
+        int randomInt = Random.Range(0, 5 + 1);
         bool spawnPincho = randomInt == 0;
 
         if (spawnPincho)
@@ -45,7 +48,7 @@ public class SpawnerManager : MonoBehaviour
         }
         else
         {
-            randomInt = Random.Range(0, 2 + 1);
+            randomInt = Random.Range(0, 5 + 1);
             bool spawnPowerUp = randomInt == 0;
 
             if (spawnPowerUp)

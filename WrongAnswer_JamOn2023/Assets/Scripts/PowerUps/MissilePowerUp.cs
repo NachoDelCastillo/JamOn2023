@@ -12,7 +12,7 @@ public class MissilePowerUp : PowerUp
     }
     public override void Power(GameObject player)
     {
-        GameObject m = Instantiate(missile, player.transform);
+        GameObject m = Instantiate(missile);
         m.gameObject.transform.position = player.transform.position + new Vector3(0, 3.3f, 0);
     }
 }
