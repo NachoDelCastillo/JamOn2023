@@ -277,7 +277,7 @@ public class ShipController : MonoBehaviour
 
     public bool IsOnWall()
     {
-        Debug.Log(thisFrameOnTrack);
+        // Debug.Log(thisFrameOnTrack);
         return !thisFrameOnTrack;
     }
 

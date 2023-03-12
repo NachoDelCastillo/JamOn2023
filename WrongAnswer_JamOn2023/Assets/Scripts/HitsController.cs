@@ -42,6 +42,7 @@ public class HitsController : MonoBehaviour
                 effectCont = 0;
             }
         }
+
     }
 
     public bool OnHit()
