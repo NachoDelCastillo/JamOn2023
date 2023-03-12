@@ -48,11 +48,16 @@ public class SpawnerManager : MonoBehaviour
             if (spawnPincho)
             {
                 pinchos.SpawnThis();
+                if (Random.Range(0, 4 + 1) == 0)
+                    pinchos.SpawnThis();
             }
             else
             {
                 punos.SpawnThis();
+                if (Random.Range(0, 3 + 1) == 0)
+                    pinchos.SpawnThis();
             }
+
             itemCont++;
         }
 
