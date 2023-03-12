@@ -2,8 +2,6 @@ using UnityEngine;
 
 public abstract class PowerUp : MonoBehaviour
 {
-
-
     [SerializeField]
     float rotacion = 0.1f;
     Vector3 ejeRotacion = new Vector3(0, 1, 0);

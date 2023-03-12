@@ -2,6 +2,7 @@ using DG.Tweening;
 using Dreamteck.Splines;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,8 @@ public class ShipController : MonoBehaviour
     Transform jumpPivot;
     [SerializeField]
     float increase;
+    [SerializeField]
+    GameObject particlesPowerUp;
 
     // RAYCAST
     RaycastHit downHit;
@@ -53,7 +56,6 @@ public class ShipController : MonoBehaviour
     private float turn_speed = 60;
     SplineProjector splineProjector;
 
-
     // Jump
     public bool jumping = false;
     float jumpDuration = .5f;
@@ -61,6 +63,7 @@ public class ShipController : MonoBehaviour
     void Awake()
     {
         splineProjector = GetComponent<SplineProjector>();
+        par_powerup = particlesPowerUp.GetComponent<ParticleSystem>();
 
         Debug.DrawLine(transform.position, transform.position - transform.up * rayCastDistance, Color.green, 50);
         if (Physics.Raycast(transform.position, -transform.up, out downHit, rayCastDistance, trackLayer))
@@ -199,6 +202,9 @@ public class ShipController : MonoBehaviour
 
         // Actualizar valores
         lastFrameOnTrack = thisFrameOnTrack;
+
+
+        
     }
     int orientationForward = 1;
     bool lookForward = false;
@@ -271,5 +277,16 @@ public class ShipController : MonoBehaviour
     {
         Debug.Log(thisFrameOnTrack);
         return !thisFrameOnTrack;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<PowerUp>() != null)
+        {
+            Instantiate(particlesPowerUp, transform);
+
+            //float duration = par_powerup.main.duration + par_powerup.main.startLifetimeMultiplier;
+            //Destroy(particlesPowerUp, duration);
+        }
     }
 }
