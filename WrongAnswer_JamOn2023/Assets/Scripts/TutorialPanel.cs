@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
-using static UnityEditor.Progress;
+using DG.Tweening; 
 
 public class TutorialPanel : MonoBehaviour
 {
