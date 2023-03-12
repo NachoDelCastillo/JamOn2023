@@ -9,7 +9,7 @@ public class Missile : MonoBehaviour
     [SerializeField]
     Transform pivot;
 
-    float vel = 3/*=100*/;
+    float vel = 300/*=100*/;
     bool shot;
     // Start is called before the first frame update
 
@@ -42,7 +42,7 @@ public class Missile : MonoBehaviour
             //transform.Translate(transform.forward * vel * Time.deltaTime);
             transform.position = Vector3.MoveTowards(transform.position, bossPosition, vel * Time.deltaTime);
 
-            vel += Time.deltaTime * .7f;
+            vel += Time.deltaTime * 10;
 
             float dist = Vector3.Distance(transform.position, bossPosition);
 
