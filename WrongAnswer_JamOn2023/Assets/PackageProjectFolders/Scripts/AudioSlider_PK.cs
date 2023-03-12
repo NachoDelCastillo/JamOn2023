@@ -84,13 +84,13 @@ public class AudioSlider_PK : Button_PK
         // Cambiar texto
         if (slider.value != 10) // Si el nuevo valor es menor que 10
         {
-            if (isMusicSlider) thisText.text = "MUSIC   " + slider.value; // Si es el slider del Sonido
-            else thisText.text = "SOUND   " + slider.value; // Si es el slider de la musica
+            if (isMusicSlider) thisText.text = "MUSIC " + slider.value; // Si es el slider del Sonido
+            else thisText.text = "SOUND " + slider.value; // Si es el slider de la musica
         }
         else
         {
-            if (isMusicSlider) thisText.text = "MUSIC  " + 10; // Si es el slider del Sonido 
-            else thisText.text = "SOUND  " + 10; // Si es el slider de la musica
+            if (isMusicSlider) thisText.text = "MUSIC " + 10; // Si es el slider del Sonido 
+            else thisText.text = "SOUND " + 10; // Si es el slider de la musica
         }
     }
 }

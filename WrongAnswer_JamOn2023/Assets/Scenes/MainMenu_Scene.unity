@@ -3139,7 +3139,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_text
-      value: standard RECOMENDADO
+      value: standard RECOMMENDED
       objectReference: {fileID: 0}
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_fontSize
