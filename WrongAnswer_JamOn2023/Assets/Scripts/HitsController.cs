@@ -27,7 +27,7 @@ public class HitsController : MonoBehaviour
         }
     }
 
-    public void OnHit()
+    public bool OnHit()
     {
         if (cont > invinTime)
         {
@@ -43,6 +43,9 @@ public class HitsController : MonoBehaviour
             }
 
             cont = 0;
+
+            return true;
         }
+        return false;
     }
 }

@@ -14,11 +14,13 @@ public class Obstacle : MonoBehaviour{
        
         if (player){
             if (pinchos == null || (pinchos != null && !other.GetComponent<ShipController>().jumping)){
-                player.OnHit();
-                if (transform.parent != null)
-                    Destroy(transform.parent.gameObject);
-                else
-                    Destroy(this.gameObject);
+                if (player.OnHit())
+                {
+                    if (transform.parent != null)
+                        Destroy(transform.parent.gameObject);
+                    else
+                        Destroy(this.gameObject);
+                }
             }
         }
     }

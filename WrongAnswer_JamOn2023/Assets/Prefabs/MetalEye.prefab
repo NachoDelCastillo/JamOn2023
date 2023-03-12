@@ -510,6 +510,8 @@ GameObject:
   - component: {fileID: 6372610832271068343}
   - component: {fileID: 8061395352090952466}
   - component: {fileID: 5204792369493129176}
+  - component: {fileID: 1347388274634765907}
+  - component: {fileID: 4568887426218682547}
   m_Layer: 0
   m_Name: MetalEye
   m_TagString: Untagged
@@ -594,6 +596,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &1347388274634765907
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5997632954998887949}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.011
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4568887426218682547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5997632954998887949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680122b3f55c920479cc7dae0b879434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 6290860960874357650, guid: 44195c3b5492ee441bd63c8c2db69b1b, type: 3}
+  boss: {fileID: 0}
 --- !u!1 &6179157732379207197
 GameObject:
   m_ObjectHideFlags: 0
