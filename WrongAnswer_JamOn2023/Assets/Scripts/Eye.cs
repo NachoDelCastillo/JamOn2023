@@ -31,6 +31,9 @@ public class Eye : MonoBehaviour
     [SerializeField]
     bool lookPlayer;
 
+    [SerializeField]
+    bool onMainMenu;
+
     private void Awake()
     {
         id = GameManager.GetInstance().getEyes().Count;
@@ -42,7 +45,10 @@ public class Eye : MonoBehaviour
         //foreach (MeshRenderer item in breakTheseParts)
         //    item.material = functionalEye;
 
-        lookTarget = ship.transform.position;
+
+        if (!onMainMenu)
+            lookTarget = ship.transform.position;
+        else lookTarget = new Vector3(0, 0, 0);
 
         Invoke("ChangeTarget", 1);
     }
@@ -54,7 +60,10 @@ public class Eye : MonoBehaviour
         float y = Random.Range(-num, num);
         float z = Random.Range(-num, num);
 
-        lookTarget = ship.transform.position + new Vector3(x, y, z);
+        if (!onMainMenu)
+            lookTarget = ship.transform.position + new Vector3(x, y, z);
+        else
+            lookTarget = new Vector3(x, y, z);
 
         Invoke("ChangeTarget", Random.Range(.2f, 1f));
     }
