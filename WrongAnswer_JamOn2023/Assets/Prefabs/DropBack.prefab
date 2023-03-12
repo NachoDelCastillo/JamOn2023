@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 1295933526626237972}
   - component: {fileID: 688505404582564342}
   - component: {fileID: 5387236483162750638}
+  - component: {fileID: 4628728199062290223}
   m_Layer: 5
   m_Name: DropImage
   m_TagString: Untagged
@@ -246,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteList:
   - sprites:
-    - {fileID: 21300000, guid: 9125c204f566db048a92ebcb64d9d14a, type: 3}
+    - {fileID: 21300000, guid: 5b023290a1cb4594ab1ede4872ac4d46, type: 3}
     - {fileID: 21300000, guid: 9125c204f566db048a92ebcb64d9d14a, type: 3}
   - sprites:
     - {fileID: 21300000, guid: d86d9dcaec124094a99941269ef19c41, type: 3}
@@ -254,7 +255,7 @@ MonoBehaviour:
   - sprites:
     - {fileID: 21300000, guid: 503fb91f651c41b4781c93637f31b6c8, type: 3}
   - sprites:
-    - {fileID: 21300000, guid: f8c9467a892580344bb697526dac0d13, type: 3}
+    - {fileID: 21300000, guid: 674b44eb95c61eb4db62bc44ff57f27a, type: 3}
   chances: 4b0000005a0000006200000064000000
   colors:
   - {r: 0.022546029, g: 0.004271993, b: 0.9056604, a: 1}
@@ -276,7 +277,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19708252, y: 0.08609009}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -287,5 +288,101 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 125, y: 112.5}
+  m_Size: {x: 175, y: 100}
   m_EdgeRadius: 0
+--- !u!82 &4628728199062290223
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718568334172204470}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 45a63cff8ac32f44b92c79654e54f7cb, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 2.88
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

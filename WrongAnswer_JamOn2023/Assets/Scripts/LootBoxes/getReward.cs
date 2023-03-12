@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class getReward : MonoBehaviour{
 
+    private void Start()
+    {
+    }
 
     private void OnTriggerStay2D(Collider2D collision){
         var cmp = collision.GetComponent<CaseCell>();
@@ -14,6 +17,17 @@ public class getReward : MonoBehaviour{
             gameObject.SetActive(false);
             cmp.transform.parent.GetChild(1).gameObject.SetActive(true);
                        
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var cmp = collision.GetComponent<AudioSource>();
+
+        if (cmp != null)
+        {
+            cmp.pitch = Random.Range(2.9f, 3f);
+            cmp.Play();
         }
     }
 }

@@ -4085,7 +4085,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1356581184
 BoxCollider2D:
@@ -4404,7 +4404,7 @@ MonoBehaviour:
   prefab: {fileID: 3954424933522881500, guid: 43ef51e76b6d2ff41b016168e35b2c3c, type: 3}
   getReward: {fileID: 1356581181}
   speedMin: 1.5
-  speedMax: 4
+  speedMax: 2
 --- !u!114 &1543301516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6147,6 +6147,7 @@ MonoBehaviour:
   textTimer: {fileID: 0}
   textRecord: {fileID: 0}
   newRecord: {fileID: 0}
+  oldRecord: {fileID: 0}
   textNewRecordNum: {fileID: 0}
   guardar: {fileID: 11400000, guid: c484de0c757814b498dd85be57e397a3, type: 2}
 --- !u!4 &210889202534510734
