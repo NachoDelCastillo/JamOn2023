@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,12 +42,12 @@ public class Timer : MonoBehaviour{
     }
     public void actualizarRecord(){
         if (myBestTime != -1)
-            textRecord.text = myBestTime.ToString();
+            textRecord.text = TimeSpan.FromSeconds(myBestTime).ToString(@"mm\:ss\:fff");
         else 
             textRecord.text = "No Time";
     }
     public void actualizarTimer() {
-        textTimer.text = timer.ToString();
+        textTimer.text = TimeSpan.FromSeconds(timer).ToString(@"mm\:ss\:fff");
     }
     public void stopTimer(){
         if (timer < myBestTime || myBestTime == -1)
