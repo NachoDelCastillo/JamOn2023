@@ -23,30 +23,43 @@ public class Eye : MonoBehaviour
 
     ShipController ship;
 
+    bool golpeado = false;
+
     private void Awake()
     {
         id = GameManager.GetInstance().getEyes().Count;
         GameManager.GetInstance().getEyes().Add(this);
 
         ship = FindObjectOfType<ShipController>();
+
+        // Fix 
+        //foreach (MeshRenderer item in breakTheseParts)
+        //    item.material = functionalEye;
     }
 
     private void Update()
     {
-        transform.LookAt(ship.transform.position);
+        if (!golpeado)
+            transform.LookAt(ship.transform.position);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         Missile misil = collision.gameObject.GetComponent<Missile>();
-        if (misil != null && id==GameManager.GetInstance().GetEyeIndex())
+        if (misil != null && id == GameManager.GetInstance().GetEyeIndex())
         {
             GameManager.GetInstance().IncreaseEyeIndex();
             Instantiate(explosion, transform.position, Quaternion.identity, boss.transform);
             Instantiate(explosion_2, transform.position, Quaternion.identity, boss.transform);
             misil.Explode();
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
+
+            golpeado = true;
+            foreach (MeshRenderer item in breakTheseParts)
+                item.material = brokenEye;
+
+            Camera.main.GetComponent<CameraShake>().Shake(1f, 4);
         }
-              
+
     }
 }

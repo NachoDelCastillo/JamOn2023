@@ -476,8 +476,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 141debc8e628e2e4bb141e0a82f2479e, type: 2}
-  - {fileID: 2100000, guid: 141debc8e628e2e4bb141e0a82f2479e, type: 2}
+  - {fileID: 2100000, guid: 9463623b21604c04fa62b7262fc2244a, type: 2}
+  - {fileID: 2100000, guid: 9463623b21604c04fa62b7262fc2244a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -696,7 +696,11 @@ MonoBehaviour:
   explosion: {fileID: 6290860960874357650, guid: 44195c3b5492ee441bd63c8c2db69b1b, type: 3}
   explosion_2: {fileID: 0}
   boss: {fileID: 0}
-  brokenEye: {fileID: 0}
+  functionalEye: {fileID: 2100000, guid: f17d7b778529cbc40b8cbbeec3cd93c9, type: 2}
+  brokenEye: {fileID: 2100000, guid: 9463623b21604c04fa62b7262fc2244a, type: 2}
+  breakTheseParts:
+  - {fileID: 3551990545550308101}
+  - {fileID: 7614934570553268941}
 --- !u!1 &6179157732379207197
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,7 +762,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e25f10714a990544b941070c0394ff71, type: 2}
+  - {fileID: 2100000, guid: f17d7b778529cbc40b8cbbeec3cd93c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

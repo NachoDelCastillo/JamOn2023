@@ -22,8 +22,8 @@ public class Timer : MonoBehaviour{
         guardar.Load();       
         timer = 0.0f;
         
-        //guardar.record = -1;
-        //guardar.Safe();
+        guardar.record = -1;
+        guardar.Safe();
         myBestTime = guardar.record;
         actualizarRecord();
     }
@@ -58,7 +58,7 @@ public class Timer : MonoBehaviour{
             actualizarRecord();
 
             newRecord.SetActive(true);
-            textNewRecordNum.text= myBestTime.ToString();
+            textNewRecordNum.text= TimeSpan.FromSeconds(myBestTime).ToString(@"mm\:ss\:fff");
             textTimer.text= "";
             textRecord.text = "";
         }
