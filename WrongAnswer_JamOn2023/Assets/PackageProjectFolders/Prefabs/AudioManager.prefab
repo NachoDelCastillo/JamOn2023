@@ -109,7 +109,7 @@ MonoBehaviour:
     music: 0
     source: {fileID: 0}
   - name: Woosh
-    clip: {fileID: 8300000, guid: 598f67d3791b03c489c9ac7c00e648b0, type: 3}
+    clip: {fileID: 8300000, guid: 24964efeb15434048a7a8939518ce1e4, type: 3}
     volume: 1
     maxVolume: 0.768
     pitch: 1
