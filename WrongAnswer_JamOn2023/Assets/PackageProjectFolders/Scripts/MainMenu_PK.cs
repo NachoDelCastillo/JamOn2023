@@ -18,8 +18,8 @@ public class MainMenu_PK : MenuManager_PK
         base.buttonPressed(index);
 
         if (index == 0) allMenuManager.PressPlay();
-        else if (index == 1) allMenuManager.PressSettings();
-        else if (index == 2) allMenuManager.PressGacha();
+        else if (index == 1) allMenuManager.PressGacha();
+        else if (index == 2) allMenuManager.PressSettings();
         else if (index == 3) allMenuManager.PressCredits();
         else if (index == 4) PressQuit();
     }
