@@ -96,9 +96,22 @@ public class AllMenuManager_PK : MonoBehaviour
     {
         settingsMenu.enabled = false;
         levelSelectorMenu.enabled = false;
+        gachaMenu.enabled = false;
         StartCoroutine(EnableMenu(mainMenu, true, cameraSpeed/2));
 
+        cameraObj.DOKill();
         cameraObj.DOMoveY(0, cameraSpeed);
+    }
+
+    public void BackButtonHorizontal()
+    {
+        settingsMenu.enabled = false;
+        levelSelectorMenu.enabled = false;
+        gachaMenu.enabled = false;
+        StartCoroutine(EnableMenu(mainMenu, true, cameraSpeed / 2));
+
+        cameraObj.DOKill();
+        cameraObj.DOMoveX(0, cameraSpeed);
     }
 
     #endregion

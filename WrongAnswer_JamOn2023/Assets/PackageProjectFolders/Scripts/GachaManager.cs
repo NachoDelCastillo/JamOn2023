@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GachaManager : MenuManager_PK
+public class GachaManager : MonoBehaviour
 {
     AllMenuManager_PK allMenuManager;
+    void Awake()
+    { allMenuManager = GetComponentInParent<AllMenuManager_PK>(); }
 
-    protected override void ExtraAwake()
+
+    // UPDATE USAIS ESTE
+    void Update()
     {
-        allMenuManager = GetComponentInParent<AllMenuManager_PK>();
-    }
-
-    protected override void buttonPressed(int index)
-    {
-        base.buttonPressed(index);
-
-        if (index == nButtons - 1) allMenuManager.BackButton();
+        if (Input.GetKeyDown(KeyCode.Escape))
+            allMenuManager.BackButtonHorizontal();
     }
 }

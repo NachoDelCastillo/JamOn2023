@@ -64,7 +64,7 @@ public class MenuManager_PK : MonoBehaviour
 
             PauseMenu_PK posiblePauseMenu = GetComponent<PauseMenu_PK>();
 
-            if (!buttons[buttonSelected].GetComponent<AudioSlider_PK>())
+            if (buttonSelected != -1 && !buttons[buttonSelected].GetComponent<AudioSlider_PK>())
             {
                 if (posiblePauseMenu == null)
                     canSound = true;
