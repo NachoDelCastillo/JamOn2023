@@ -2511,6 +2511,7 @@ MonoBehaviour:
   brokenEye: {fileID: 0}
   breakTheseParts: []
   lookPlayer: 1
+  onMainMenu: 0
 --- !u!1001 &779467686015238059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3433,7 +3434,7 @@ PrefabInstance:
     - target: {fileID: -1081237460163219890, guid: e716923e65c74034e8db67b4ff3c2945, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 74d6ef3722b685643bcc1d09e5cfe7a6, type: 2}
+      objectReference: {fileID: 2100000, guid: f17d7b778529cbc40b8cbbeec3cd93c9, type: 2}
     - target: {fileID: 919132149155446097, guid: e716923e65c74034e8db67b4ff3c2945, type: 3}
       propertyPath: m_Name
       value: MESH
