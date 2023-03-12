@@ -30,7 +30,7 @@ public class BossHealth : MonoBehaviour
         killed = true;
         this.gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
         Instantiate(explosion, this.gameObject.GetComponentInChildren<MeshRenderer>().transform);
-        GameObject.Find("Ship").GetComponent<ShipController>().enabled = false;
+        //GameObject.Find("Ship").GetComponent<ShipController>().enabled = false;
         texto.SetActive(true);
         timer.stopTimer();
         timer.enabled= false;
