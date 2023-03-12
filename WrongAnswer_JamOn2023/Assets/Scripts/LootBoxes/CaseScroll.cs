@@ -20,9 +20,7 @@ public class CaseScroll : MonoBehaviour{
     public void Scroll(){
         if (isCrolling) return;
 
-        foreach(var cell in cells)Destroy(cell.gameObject.transform.parent.gameObject);
-        cells.Clear();
-        transform.position = new Vector3(15, 0, 0);
+        limpiar();
        
         for (int i = 0; i < 500; i++)
             generateCell();
@@ -48,5 +46,10 @@ public class CaseScroll : MonoBehaviour{
     }
     public void generateCell(){
         cells.Add(Instantiate(prefab, transform).GetComponentInChildren<CaseCell>());
+    }
+    public void limpiar(){
+        foreach (var cell in cells) Destroy(cell.gameObject.transform.parent.gameObject);
+        cells.Clear();
+        transform.position = new Vector3(15, 0, 0);
     }
 }

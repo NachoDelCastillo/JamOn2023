@@ -403,7 +403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Roll
+  m_text: Scroll
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -3110,7 +3110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1092, y: -23}
+  m_AnchoredPosition: {x: -1259, y: -23}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1165161745
@@ -3125,6 +3125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e09be3865f60d0428ea67a4e84b29b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scroll: {fileID: 1543301513}
 --- !u!224 &1176296098 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7707667169853727855, guid: dd40a9128c9ea5e45879f927fbeb52da, type: 3}
@@ -3302,7 +3303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -953, y: 0}
+  m_AnchoredPosition: {x: -1121, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1237583452
@@ -3731,6 +3732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1356581182}
   - component: {fileID: 1356581184}
+  - component: {fileID: 1356581185}
   - component: {fileID: 1356581183}
   m_Layer: 5
   m_Name: RewardCheck
@@ -3790,7 +3792,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3806,6 +3808,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 25, y: 190}
   m_EdgeRadius: 0
+--- !u!114 &1356581185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356581181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdebeae7a78be65418bfbcc3e31b499f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1436807068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4052,8 +4066,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3954424933522881500, guid: 43ef51e76b6d2ff41b016168e35b2c3c, type: 3}
   getReward: {fileID: 1356581181}
-  speedMin: 1
-  speedMax: 3
+  speedMin: 1.5
+  speedMax: 4
 --- !u!114 &1543301516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4798,7 +4812,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: press escape
+  m_text: press escape to back menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5b2702f6ed0d1894290612142b23fde9, type: 2}
   m_sharedMaterial: {fileID: -127782218519496678, guid: 5b2702f6ed0d1894290612142b23fde9, type: 2}
