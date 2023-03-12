@@ -14,7 +14,7 @@ public class HitsController : MonoBehaviour
 
     GameObject shipGfx=null;
 
-    float cont = 0f;
+    float cont;
     float effectCont = 0f;
     //Shield
     Shield shield;
@@ -22,7 +22,8 @@ public class HitsController : MonoBehaviour
 
     private void Start(){
         shield = GetComponentInChildren<Shield>();
-        gameManager=GameManager.GetInstance();      
+        gameManager=GameManager.GetInstance();
+        cont = invinTime + 0.5f;
     }   
     private void Update()
     {
