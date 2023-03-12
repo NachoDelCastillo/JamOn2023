@@ -91,6 +91,11 @@ public class GameManager : MonoBehaviour
         Rewards.x = idList;
         Rewards.y = id;
     }
+
+    public Vector2Int GetSkin()
+    {
+        return Rewards;
+    }
     #region Change Scene
     public void ChangeScene(string sceneName)
     {
