@@ -18,22 +18,25 @@ public class AllMenuManager_PK : MonoBehaviour
     MainMenu_PK mainMenu;
     SettingsMenu_PK settingsMenu;
     LevelselectorMenu_PK levelSelectorMenu;
+    GachaManager gachaMenu;
 
     private void Awake()
     {
         mainMenu = FindObjectOfType<MainMenu_PK>();
         settingsMenu = FindObjectOfType<SettingsMenu_PK>();
         levelSelectorMenu = FindObjectOfType<LevelselectorMenu_PK>();
+        gachaMenu = FindObjectOfType<GachaManager>();
 
         mainMenu.enabled = true;
         settingsMenu.enabled = false;
         levelSelectorMenu.enabled = false;
+        gachaMenu.enabled = false;
     }
 
 
     private void Update()
     {
-        if (Input.anyKeyDown && Mathf.Abs(cameraObj.position.x) == cameraDistanceX) 
+        if (Input.anyKeyDown && cameraObj.position.x == cameraDistanceX) 
         {
             // Sound
             AudioManager_PK.GetInstance().Play("ButtonPress", 1);
@@ -70,9 +73,10 @@ public class AllMenuManager_PK : MonoBehaviour
         cameraObj.DOMoveY(-cameraDistanceY, cameraSpeed);
     }
 
-    public void PressControls()
+    public void PressGacha()
     {
         mainMenu.enabled = false;
+        StartCoroutine(EnableMenu(gachaMenu, true, cameraSpeed / 2));
 
         cameraObj.DOMoveX(-cameraDistanceX, cameraSpeed);
     }
