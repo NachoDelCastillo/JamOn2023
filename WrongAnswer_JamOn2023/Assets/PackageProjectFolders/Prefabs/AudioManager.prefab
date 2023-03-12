@@ -102,16 +102,30 @@ MonoBehaviour:
     music: 0
     source: {fileID: 0}
   - name: ShieldUp
-    clip: {fileID: 8300000, guid: a7c66eb8c3349ea469987949bf2451b8, type: 3}
+    clip: {fileID: 8300000, guid: 1e3aa00dec5b17b44ab309d627f70a0e, type: 3}
     volume: 1
-    maxVolume: 0.5
+    maxVolume: 0.768
     pitch: 1
     music: 0
     source: {fileID: 0}
   - name: Woosh
-    clip: {fileID: 8300000, guid: 3a3aac309fed4b84492089e394b7f183, type: 3}
+    clip: {fileID: 8300000, guid: 598f67d3791b03c489c9ac7c00e648b0, type: 3}
     volume: 1
     maxVolume: 0.768
+    pitch: 1
+    music: 0
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: d2c60b649d41e264cb3aff31fb857679, type: 3}
+    volume: 1
+    maxVolume: 1
+    pitch: 1
+    music: 0
+    source: {fileID: 0}
+  - name: Rocket
+    clip: {fileID: 8300000, guid: 4388edb477809704c8a71b0844d21ce2, type: 3}
+    volume: 1
+    maxVolume: 1
     pitch: 1
     music: 0
     source: {fileID: 0}

@@ -91,7 +91,6 @@ public class ShipController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        Debug.Log("jump");
         if (context.started && !jumping && thisFrameOnTrack)
         {
             jumping = true;
@@ -104,6 +103,8 @@ public class ShipController : MonoBehaviour
     bool jumpRight;
     void Jump()
     {
+        AudioManager_PK.GetInstance().Play("Woosh", 2);//UnityEngine.Random.Range(.9f, 1.1f));
+
         jumpRight = !jumpRight;
 
         int i;
@@ -194,6 +195,7 @@ public class ShipController : MonoBehaviour
             barrelRollPivot.DOKill();
             BarrelRoll(barrelRollOrientation, 1, 2);
             Instantiate(particlesSalto, transform);
+            AudioManager_PK.GetInstance().Play("Woosh", 2);//UnityEngine.Random.Range(.9f, 1.1f));
         }
         // Cuando aterriza
         else if (!lastFrameOnTrack && thisFrameOnTrack)

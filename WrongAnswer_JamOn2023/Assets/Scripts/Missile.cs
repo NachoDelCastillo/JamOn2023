@@ -75,8 +75,11 @@ public class Missile : MonoBehaviour
 
     public void Shoot()
     {
+
         shot = true;
         eyeIndex = GameManager.GetInstance().GetEyeIndex();
+
+        AudioManager_PK.GetInstance().Play("Rocket", 1);//UnityEngine.Random.Range(.9f, 1.1f));
     }
     public void Explode()
     {

@@ -101,6 +101,8 @@ public class Eye : MonoBehaviour
                 item.material = brokenEye;
 
             Camera.main.GetComponent<CameraShake>().Shake(1f, 1);
+
+            AudioManager_PK.GetInstance().Play("Explosion", 1);//UnityEngine.Random.Range(.9f, 1.1f));
         }
 
     }
