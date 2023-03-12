@@ -57,6 +57,8 @@ public class Eye : MonoBehaviour
             golpeado = true;
             foreach (MeshRenderer item in breakTheseParts)
                 item.material = brokenEye;
+
+            Camera.main.GetComponent<CameraShake>().Shake(1f, 4);
         }
 
     }
