@@ -50,6 +50,6 @@ public class CaseScroll : MonoBehaviour{
     public void limpiar(){
         foreach (var cell in cells) Destroy(cell.gameObject.transform.parent.gameObject);
         cells.Clear();
-        transform.position = new Vector3(15, 0, 0);
+        transform.position = new Vector3(15, 0, 25);
     }
 }
