@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour{
     public Text textRecord;
 
     public GameObject newRecord;
+    public GameObject oldRecord;
     public Text textNewRecordNum;
 
     public Guardar guardar;
@@ -43,8 +44,9 @@ public class Timer : MonoBehaviour{
     public void actualizarRecord(){
         if (myBestTime != -1)
             textRecord.text = TimeSpan.FromSeconds(myBestTime).ToString(@"mm\:ss\:fff");
-        else 
-            textRecord.text = "No Time";
+        else{
+            oldRecord.SetActive(false);
+        }
     }
     public void actualizarTimer() {
         textTimer.text = TimeSpan.FromSeconds(timer).ToString(@"mm\:ss\:fff");
