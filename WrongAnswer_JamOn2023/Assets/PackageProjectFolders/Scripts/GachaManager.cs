@@ -8,11 +8,15 @@ public class GachaManager : MonoBehaviour
     void Awake()
     { allMenuManager = GetComponentInParent<AllMenuManager_PK>(); }
 
+    [SerializeField]
+    GameObject scroll;
 
     // UPDATE USAIS ESTE
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)){
             allMenuManager.BackButtonHorizontal();
+            scroll.GetComponent<CaseScroll>().limpiar();
+        }
     }
 }
