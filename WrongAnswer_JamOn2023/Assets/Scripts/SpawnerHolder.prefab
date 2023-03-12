@@ -48,8 +48,7 @@ MonoBehaviour:
   player: {fileID: 0}
   boss: {fileID: 0}
   track: {fileID: 0}
-  tMin: 10
-  tMax: 20
+  respectRoadNormals: 0
   maxPosVariation: 30
 --- !u!1 &6141906512316903421
 GameObject:
@@ -99,8 +98,7 @@ MonoBehaviour:
   player: {fileID: 0}
   boss: {fileID: 0}
   track: {fileID: 0}
-  tMin: 3
-  tMax: 5
+  respectRoadNormals: 0
   maxPosVariation: 0
 --- !u!1 &6141906513526388391
 GameObject:
@@ -150,8 +148,7 @@ MonoBehaviour:
   player: {fileID: 0}
   boss: {fileID: 0}
   track: {fileID: 0}
-  tMin: 5
-  tMax: 10
+  respectRoadNormals: 0
   maxPosVariation: 30
 --- !u!1 &6141906513864919063
 GameObject:
@@ -201,8 +198,7 @@ MonoBehaviour:
   player: {fileID: 0}
   boss: {fileID: 0}
   track: {fileID: 0}
-  tMin: 5
-  tMax: 10
+  respectRoadNormals: 0
   maxPosVariation: 30
 --- !u!1 &6141906514009004024
 GameObject:
@@ -257,6 +253,7 @@ MonoBehaviour:
   pinchos: {fileID: 6141906512316903411}
   powerUp_cohete: {fileID: 6141906513864919061}
   powerUp_escudo: {fileID: 6141906513526388389}
+  shield: {fileID: 0}
 --- !u!1 &6141906514290184438
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +302,5 @@ MonoBehaviour:
   player: {fileID: 0}
   boss: {fileID: 0}
   track: {fileID: 0}
-  tMin: 1
-  tMax: 3
+  respectRoadNormals: 1
   maxPosVariation: 60
