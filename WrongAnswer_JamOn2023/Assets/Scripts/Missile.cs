@@ -40,7 +40,7 @@ public class Missile : MonoBehaviour
             transform.LookAt(bossPosition);
 
             //transform.Translate(transform.forward * vel * Time.deltaTime);
-            transform.position = Vector3.MoveTowards(transform.position, bossPosition, vel);
+            transform.position = Vector3.MoveTowards(transform.position, bossPosition, vel * Time.deltaTime);
 
             vel += Time.deltaTime * .7f;
 
@@ -83,6 +83,11 @@ public class Missile : MonoBehaviour
         shot = false;
         //this.gameObject.GetComponentInParent<ShipController>().IncreaseVel();
         // this.gameObject.SetActive(false);
-        Destroy(gameObject);
+        MeshRenderer[] meshes = GetComponentsInChildren<MeshRenderer>();
+        for (int i = 0;i < meshes.Length; i++)
+            meshes[i].enabled = false;
+
+        this.enabled = false;
+        Destroy(gameObject, 20);
     }
 }
