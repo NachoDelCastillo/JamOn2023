@@ -9,6 +9,10 @@ public class Timer : MonoBehaviour{
     float myBestTime;
     public Text textTimer;
     public Text textRecord;
+
+    public GameObject newRecord;
+    public Text textNewRecordNum;
+
     public Guardar guardar;
     GameManager manager;
     // Start is called before the first frame update
@@ -51,6 +55,11 @@ public class Timer : MonoBehaviour{
             guardar.record = myBestTime;
             guardar.Safe();
             actualizarRecord();
+
+            newRecord.SetActive(true);
+            textNewRecordNum.text= myBestTime.ToString();
+            textTimer.text= "";
+            textRecord.text = "";
         }
         timer = 0.0f;
         actualizarTimer();
