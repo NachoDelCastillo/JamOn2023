@@ -2507,6 +2507,10 @@ MonoBehaviour:
   explosion: {fileID: 6290860960874357650, guid: 44195c3b5492ee441bd63c8c2db69b1b, type: 3}
   explosion_2: {fileID: 0}
   boss: {fileID: 6628783444283211179}
+  functionalEye: {fileID: 0}
+  brokenEye: {fileID: 0}
+  breakTheseParts: []
+  lookPlayer: 1
 --- !u!1001 &779467686015238059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2522,6 +2526,10 @@ PrefabInstance:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: lookPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: explosion_2
       value: 
@@ -2608,6 +2616,10 @@ PrefabInstance:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: lookPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: explosion_2
       value: 
@@ -2929,6 +2941,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
     - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: lookPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: explosion_2
       value: 
       objectReference: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
@@ -3014,6 +3030,10 @@ PrefabInstance:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: lookPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: explosion_2
       value: 
@@ -3101,6 +3121,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
     - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: lookPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: explosion_2
       value: 
       objectReference: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
@@ -3186,6 +3210,10 @@ PrefabInstance:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: lookPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: explosion_2
       value: 
@@ -3667,6 +3695,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
     - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: lookPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: explosion_2
       value: 
       objectReference: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
@@ -3830,6 +3862,10 @@ PrefabInstance:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: lookPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: explosion_2
       value: 
