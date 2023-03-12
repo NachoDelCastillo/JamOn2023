@@ -7070,8 +7070,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skins:
   - mallas:
-    - {fileID: 306224787352212793}
     - {fileID: 6448674494802832025}
+    - {fileID: 306224787352212793}
   - mallas:
     - {fileID: 8035898651156041964}
     - {fileID: 4727899584895414542}
