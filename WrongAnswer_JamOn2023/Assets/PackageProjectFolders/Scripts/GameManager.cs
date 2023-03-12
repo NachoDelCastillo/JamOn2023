@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     float transitionDuration = 1;
     int level;
 
-    float openValue= 700;
+    float openValue = 700;
     float closedValue = 210;
     int eyeIndex = 0;
     bool gameOver_bool = false;
@@ -41,8 +41,10 @@ public class GameManager : MonoBehaviour
         levelNum_Text.gameObject.SetActive(false);
         icon.gameObject.SetActive(false);
     }
-    private void Update(){
-        if (isGameOver() && Input.GetKeyDown(KeyCode.Space)){
+    private void Update()
+    {
+        if (isGameOver() && Input.GetKeyDown(KeyCode.Space))
+        {
             gameOver_bool = false;
             ChangeScene("level_1");
         }
@@ -73,12 +75,14 @@ public class GameManager : MonoBehaviour
         return eyeList;
     }
 
-    public void setGameOver(bool active){
+    public void setGameOver(bool active)
+    {
         gameOver_Object.SetActive(active);
-        player.GetComponent<ShipController>().enabled= !active;
-        gameOver_bool= active;
+        player.GetComponent<ShipController>().enabled = !active;
+        gameOver_bool = active;
     }
-    public bool isGameOver() {
+    public bool isGameOver()
+    {
         return gameOver_bool;
     }
     #region Change Scene
@@ -94,9 +98,10 @@ public class GameManager : MonoBehaviour
         levelNum_Text.gameObject.SetActive(true);
         levelNum_Text.text = level.ToString();
 
-        this.level = level;
+        // this.level = level;
 
-        StartCoroutine(ChangeSceneCoroutine(1, ""));
+
+            StartCoroutine(ChangeSceneCoroutine(1, ""));
     }
 
     float transitionsMove;
@@ -120,7 +125,7 @@ public class GameManager : MonoBehaviour
         //.SetUpdate(true).SetEase(Ease.OutSine);
 
         duringTransition = true;
-        yield return new WaitForSecondsRealtime(transitionDuration+.5f);
+        yield return new WaitForSecondsRealtime(transitionDuration + .5f);
 
         DOTween.To(x => transitionsMove = x, closedValue, openValue, transitionDuration)
             .OnUpdate(updateTransitionWalls).SetUpdate(true).SetEase(Ease.InCirc);
