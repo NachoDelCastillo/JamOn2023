@@ -74,7 +74,7 @@ MonoBehaviour:
     music: 0
     source: {fileID: 0}
   - name: ButtonPress
-    clip: {fileID: 8300000, guid: 48a865f4e0fdf4446b423bb2d6abeb99, type: 3}
+    clip: {fileID: 8300000, guid: 32033deb965a4554ea631aaa3a3ebc5e, type: 3}
     volume: 1
     maxVolume: 1
     pitch: 1
@@ -105,6 +105,13 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a7c66eb8c3349ea469987949bf2451b8, type: 3}
     volume: 1
     maxVolume: 0.5
+    pitch: 1
+    music: 0
+    source: {fileID: 0}
+  - name: Woosh
+    clip: {fileID: 8300000, guid: 3a3aac309fed4b84492089e394b7f183, type: 3}
+    volume: 1
+    maxVolume: 0.768
     pitch: 1
     music: 0
     source: {fileID: 0}
