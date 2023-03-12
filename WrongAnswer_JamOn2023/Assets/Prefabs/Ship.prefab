@@ -5247,6 +5247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 1
+  particle: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
 --- !u!95 &459896533461880551
 Animator:
   serializedVersion: 4
@@ -5420,7 +5421,7 @@ MonoBehaviour:
   barrelRollPivot: {fileID: 5355604455500693548}
   jumpPivot: {fileID: 5037185067924751859}
   increase: 15
-  particlesPowerUp: {fileID: 0}
+  particlesPowerUp: {fileID: 3970307263479812088, guid: 7b4abdfffb1741e4285de0dd0cc4c475, type: 3}
   trackLayer:
     serializedVersion: 2
     m_Bits: 128
