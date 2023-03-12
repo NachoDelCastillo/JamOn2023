@@ -23,8 +23,8 @@ public class Timer : MonoBehaviour{
         guardar.Load();       
         timer = 0.0f;
         
-        guardar.record = -1;
-        guardar.Safe();
+        // guardar.record = -1;
+        // guardar.Safe();
         myBestTime = guardar.record;
         actualizarRecord();
     }
