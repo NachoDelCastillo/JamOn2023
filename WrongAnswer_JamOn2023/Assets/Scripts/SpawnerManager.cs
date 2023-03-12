@@ -23,7 +23,7 @@ public class SpawnerManager : MonoBehaviour
 
     private void Awake()
     {
-        InvokeRepeating("SpawnSomething", 1, 1);
+        InvokeRepeating("SpawnSomething", 1, 2.5f - (GameManager.GetInstance().GetLevel() * 0.75f));
 
         powerUpTimer = powerUpMAXTime;
     }

@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject player;
     List<Eye> eyeList = new List<Eye>();
     float transitionDuration = 1;
+    int level;
 
     float openValue= 700;
     float closedValue = 210;
@@ -45,6 +46,10 @@ public class GameManager : MonoBehaviour
             gameOver_bool = false;
             ChangeScene("level_1");
         }
+    }
+    public int GetLevel()
+    {
+        return level;
     }
     public void IncreaseEyeIndex()
     {
@@ -81,7 +86,9 @@ public class GameManager : MonoBehaviour
         levelNum_Text.gameObject.SetActive(true);
         levelNum_Text.text = level.ToString();
 
-        StartCoroutine(ChangeSceneCoroutine(level, ""));
+        this.level = level;
+
+        StartCoroutine(ChangeSceneCoroutine(1, ""));
     }
 
     float transitionsMove;
