@@ -16,14 +16,9 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     SplineComputer track;
     [SerializeField]
-    float tMin;
-    [SerializeField]
-    float tMax;
+    bool respectRoadNormals;
     [SerializeField]
     float maxPosVariation;
-
-    float nextSpawn = 0;
-    float cont = 0;
 
     LayerMask trackLayer;
 
@@ -33,7 +28,6 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         trackLayer = track.gameObject.layer;
-        nextSpawn = UnityEngine.Random.Range(tMin, tMax);
     }
 
     private void Update()
@@ -71,11 +65,23 @@ public class Spawner : MonoBehaviour
         Vector3 forwardDelObjeto = referencia.forward;
         Vector3 upwardDelObjeto = referencia.up;
 
-        var rotacionFinal = Quaternion.LookRotation(forwardDelObjeto, upwardDelObjeto);
-
         Vector3 rayDir = -referencia.up;
 
-        rayDir = Quaternion.AngleAxis(UnityEngine.Random.Range(-maxPosVariation, maxPosVariation), forwardDelObjeto) * rayDir;
+        var rot = UnityEngine.Random.Range(-maxPosVariation, maxPosVariation);
+
+        rayDir = Quaternion.AngleAxis(rot, forwardDelObjeto) * rayDir;
+
+        Quaternion rotacionFinal;
+
+        if (!respectRoadNormals)
+        {
+            rotacionFinal = Quaternion.LookRotation(forwardDelObjeto, upwardDelObjeto);
+        }
+        else
+        {
+            rotacionFinal = Quaternion.LookRotation(forwardDelObjeto, -rayDir);
+        }
+
 
         if (Physics.Raycast(referencia.position, rayDir, out RaycastHit hit, 300, ~trackLayer))
         {

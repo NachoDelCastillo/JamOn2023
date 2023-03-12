@@ -23,7 +23,7 @@ public class SpawnerManager : MonoBehaviour
 
     private void Awake()
     {
-        InvokeRepeating("SpawnSomething", 1, 2.5f - (GameManager.GetInstance().GetLevel() * 0.75f));
+        InvokeRepeating("SpawnSomething", 0.75f, 1.38f - (GameManager.GetInstance().GetLevel() * 0.38f));
     }
 
     private void Update()
