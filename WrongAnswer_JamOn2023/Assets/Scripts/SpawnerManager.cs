@@ -17,53 +17,43 @@ public class SpawnerManager : MonoBehaviour
     [SerializeField]
     Shield shield;
 
-    float powerUpTimer;
-    float powerUpMAXTime = 10;
+    int powerUpToSpawn = 10;
+    int itemCont = 0;
 
 
     private void Awake()
     {
-        InvokeRepeating("SpawnSomething", 1, 1);
-
-        powerUpTimer = powerUpMAXTime;
+        InvokeRepeating("SpawnSomething", 1, 2.5f - (GameManager.GetInstance().GetLevel() * 0.75f));
     }
 
     private void Update()
     {
-        if (powerUpTimer > 0)
-            powerUpTimer -= Time.deltaTime;
     }
 
     void SpawnSomething()
     {
-        powerUp_cohete.SpawnThis();
-        return;
-
-        int randomInt = Random.Range(0, 5 + 1);
-        bool spawnPincho = randomInt == 0;
-
-        if (spawnPincho)
+        bool spawnPowerUp = itemCont >= powerUpToSpawn;
+        if (spawnPowerUp)
         {
-            pinchos.SpawnThis();
+            if (!shield.active)
+                powerUp_escudo.SpawnThis();
+            else
+                powerUp_cohete.SpawnThis();
+            itemCont = 0;
         }
         else
         {
-            randomInt = Random.Range(0, 5 + 1);
-            bool spawnPowerUp = randomInt == 0;
-
-            if (spawnPowerUp)
+            int randomInt = Random.Range(0, 5 + 1);
+            bool spawnPincho = randomInt == 0;
+            if (spawnPincho)
             {
-                if (powerUpTimer < 0)
-                {
-                    powerUpTimer = powerUpMAXTime;
-
-                    if (!shield.active)
-                        powerUp_escudo.SpawnThis();
-                    else
-                        powerUp_cohete.SpawnThis();
-                }
+                pinchos.SpawnThis();
             }
-            else punos.SpawnThis();
+            else
+            {
+                punos.SpawnThis();
+            }
+            itemCont++;
         }
 
     }

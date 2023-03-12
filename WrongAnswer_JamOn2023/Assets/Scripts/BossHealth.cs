@@ -11,10 +11,12 @@ public class BossHealth : MonoBehaviour
     GameObject texto;
 
     GameManager gameManager;
+    Timer timer;
     bool killed = false;
     private void Start()
     {
         gameManager = GameManager.GetInstance();
+        timer= GetComponent<Timer>();
     }
     // Update is called once per frame
     void Update()
@@ -30,6 +32,8 @@ public class BossHealth : MonoBehaviour
         Instantiate(explosion, this.gameObject.GetComponentInChildren<MeshRenderer>().transform);
         GameObject.Find("Ship").GetComponent<ShipController>().enabled = false;
         texto.SetActive(true);
+        timer.stopTimer();
+        timer.enabled= false;
         Invoke(nameof(Kill), 4.0f);
     }
 
