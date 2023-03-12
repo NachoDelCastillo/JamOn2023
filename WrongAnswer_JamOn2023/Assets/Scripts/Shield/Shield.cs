@@ -9,6 +9,10 @@ public class Shield : MonoBehaviour
     MeshRenderer meshRenderer;
     AudioManager_PK audioManager;
     Animator myAnimator;
+
+    [SerializeField]
+    GameObject particle;
+
     private void Start(){
         meshRenderer = GetComponent<MeshRenderer>();
         audioManager = AudioManager_PK.GetInstance();
@@ -37,6 +41,8 @@ public class Shield : MonoBehaviour
     private void shieldDown(){
         myAnimator.Play("ShieldDown");
         audioManager.Play("ShieldDown", 20.0f);
+
+        Instantiate(particle, transform);
     }
     void cambio(){
         meshRenderer.enabled = active;
