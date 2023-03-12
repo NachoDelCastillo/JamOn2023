@@ -18,6 +18,8 @@ public class ShipController : MonoBehaviour
     float increase;
     [SerializeField]
     GameObject particlesPowerUp;
+    [SerializeField]
+    GameObject particlesSalto;
 
     // RAYCAST
     RaycastHit downHit;
@@ -191,6 +193,7 @@ public class ShipController : MonoBehaviour
         {
             barrelRollPivot.DOKill();
             BarrelRoll(barrelRollOrientation, 1, 2);
+            Instantiate(particlesSalto, transform);
         }
         // Cuando aterriza
         else if (!lastFrameOnTrack && thisFrameOnTrack)

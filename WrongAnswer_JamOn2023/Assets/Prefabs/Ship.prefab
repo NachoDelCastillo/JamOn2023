@@ -5422,6 +5422,7 @@ MonoBehaviour:
   jumpPivot: {fileID: 5037185067924751859}
   increase: 15
   particlesPowerUp: {fileID: 3970307263479812088, guid: 7b4abdfffb1741e4285de0dd0cc4c475, type: 3}
+  particlesSalto: {fileID: 3970307263479812088, guid: 93bb208ac911089468656094f4d0f9df, type: 3}
   trackLayer:
     serializedVersion: 2
     m_Bits: 128
