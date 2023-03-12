@@ -117,6 +117,9 @@ public class ShipController : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0)
+            return;
+
         prev_up = transform.up;
 
         // Calcular velocidad
