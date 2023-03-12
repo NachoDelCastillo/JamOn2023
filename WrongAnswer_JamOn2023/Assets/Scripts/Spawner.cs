@@ -79,7 +79,8 @@ public class Spawner : MonoBehaviour
         }
         else
         {
-            rotacionFinal = Quaternion.LookRotation(forwardDelObjeto, -rayDir);
+            var objDir = Quaternion.AngleAxis(rot / 2f, forwardDelObjeto) * referencia.up;
+            rotacionFinal = Quaternion.LookRotation(forwardDelObjeto, objDir);
         }
 
 
