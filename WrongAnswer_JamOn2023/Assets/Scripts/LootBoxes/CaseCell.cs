@@ -7,7 +7,7 @@ public class CaseCell : MonoBehaviour
 {
     [System.Serializable]
     private class ListOfSprites{
-        public List<Sprite> sprites;
+        public List<Sprite> sprites;        
     }
     [SerializeField]
     private List<ListOfSprites> spriteList;
@@ -19,13 +19,16 @@ public class CaseCell : MonoBehaviour
     private Color[] colors;
 
     CaseScroll caseScroll;
+    public int idList;
+    public int id;
+
     private void Start(){
         caseScroll = GetComponentInParent<CaseScroll>();
     }
     public void SetUp(){
         int index = Randomize();
-
-        GetComponent<Image>().sprite = spriteList[index].sprites[Random.Range(0, spriteList[index].sprites.Count)];
+        id = Random.Range(0, spriteList[index].sprites.Count);
+        GetComponent<Image>().sprite = spriteList[index].sprites[id];
         transform.parent.GetComponent<Image>().color= colors[index];
     }
 
@@ -33,15 +36,17 @@ public class CaseCell : MonoBehaviour
         int ind = 0;
         int rand = Random.Range(0, 100);
         for (int i = 0; i < chances.Length; i++){
-            if (rand <= chances[i]) return i;
+            if (rand <= chances[i]) { idList = i; return i; }
             ind++;
-        } 
+        }
+        idList = ind;
         return ind;
     }
-    private void Update(){
-        if (transform.position.x < 0) {
-            caseScroll.generateCell();
-            Destroy(gameObject); 
-        }
-    }
+
+    //private void Update(){
+    //    if (transform.position.x < 0) {
+    //        caseScroll.generateCell();
+    //        Destroy(transform.parent.gameObject); 
+    //    }
+    //}
 }

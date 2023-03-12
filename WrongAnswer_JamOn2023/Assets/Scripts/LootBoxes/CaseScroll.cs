@@ -5,6 +5,10 @@ using UnityEngine;
 public class CaseScroll : MonoBehaviour{
     [SerializeField]
     private GameObject prefab;
+
+    [SerializeField]
+    GameObject getReward;
+
     public float speedMin=1;
     public float speedMax=3;
 
@@ -14,12 +18,15 @@ public class CaseScroll : MonoBehaviour{
     private List<CaseCell> cells =new List<CaseCell>();
 
     public void Scroll(){
-        if (isCrolling) return;              
+        if (isCrolling) return;
 
-        if(cells.Count == 0) {
-            for (int i = 0; i < 10; i++)
-                generateCell();
-        }
+        foreach(var cell in cells)Destroy(cell.gameObject.transform.parent.gameObject);
+        cells.Clear();
+        transform.position = new Vector3(15, 0, 0);
+       
+        for (int i = 0; i < 500; i++)
+            generateCell();
+        
         foreach (var cell in cells)
             cell.SetUp();
 
@@ -30,14 +37,13 @@ public class CaseScroll : MonoBehaviour{
     private void Update(){
         if(!isCrolling) return;
 
-
-        transform.position = Vector2.MoveTowards(transform.position, transform.position + Vector3.left * 100, speed*Time.deltaTime*500);
+        transform.position = Vector2.MoveTowards(transform.position, transform.position + Vector3.left * 100, speed*Time.deltaTime*50);
         if(speed>0)
             speed-=Time.deltaTime;
         else{
-            speed= 0;
-            transform.position = new Vector3(525, 0, 0);
+            speed= 0;            
             isCrolling = false;
+            getReward.SetActive(true);
         }
     }
     public void generateCell(){
