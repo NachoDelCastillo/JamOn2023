@@ -56,8 +56,15 @@ public class AudioManager_PK : MonoBehaviour
                 Play("MainMenu_Music", 1);
                 break;
             default:
+
                 Stop("MainMenu_Music");
-                Play("Gameplay_Music", 1);
+
+                if (GameManager.GetInstance().GetLevel() == 1)
+                    Play("Gameplay_Music_1", 1);
+                else if (GameManager.GetInstance().GetLevel() == 2)
+                    Play("Gameplay_Music_2", 1);
+                else if (GameManager.GetInstance().GetLevel() == 3)
+                    Play("Gameplay_Music_3", 1);
                 break;
         }
     }

@@ -52,12 +52,26 @@ MonoBehaviour:
     pitch: 1
     music: 1
     source: {fileID: 0}
-  - name: Gameplay_Music
+  - name: Gameplay_Music_1
     clip: {fileID: 8300000, guid: 81ff383afe3733f41bd8a5e3cbca9dcf, type: 3}
     volume: 0.25
     maxVolume: 0.25
     pitch: 1
     music: 1
+    source: {fileID: 0}
+  - name: Gameplay_Music_2
+    clip: {fileID: 8300000, guid: 6292ba9e65c9f92448e285f5fd765acf, type: 3}
+    volume: 1
+    maxVolume: 0.5
+    pitch: 1
+    music: 0
+    source: {fileID: 0}
+  - name: Gameplay_Music_3
+    clip: {fileID: 8300000, guid: 7273add657c91b04288105403a5aca46, type: 3}
+    volume: 1
+    maxVolume: 0.5
+    pitch: 1
+    music: 0
     source: {fileID: 0}
   - name: ButtonPress
     clip: {fileID: 8300000, guid: 48a865f4e0fdf4446b423bb2d6abeb99, type: 3}
