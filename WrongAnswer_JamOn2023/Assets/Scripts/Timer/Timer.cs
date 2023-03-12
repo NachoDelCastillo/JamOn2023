@@ -14,9 +14,12 @@ public class Timer : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         manager=GameManager.GetInstance();
-        guardar.Load();
-        myBestTime = guardar.record;
+        guardar.Load();       
         timer = 0.0f;
+        
+        //guardar.record = -1;
+        //guardar.Safe();
+        myBestTime = guardar.record;
         actualizarRecord();
     }
 

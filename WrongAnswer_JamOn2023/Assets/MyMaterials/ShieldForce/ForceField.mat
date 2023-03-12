@@ -50,24 +50,24 @@ Material:
     - _enableRimGlow: 1
     - _enableRipple: 1
     - _enableScanLine: 1
-    - _fill: 0.2
+    - _fill: 0.29
     - _impactRippleAmplitude: 0
     - _impactRippleMaxRadius: 0.1
     - _impactRippleSpeed: 0
     - _intersectionMultiplier: 1.21
     - _intersectionOffset: 1.5
     - _rimGlowNoiseDensity: 4
-    - _rimGlowNoiseSpeed: 1
+    - _rimGlowNoiseSpeed: 1.5
     - _rimPulseSpeed: 10
     - _scanSize: 1
-    - _scanSpeed: 1.74
+    - _scanSpeed: 1.5
     m_Colors:
-    - _baseColor: {r: 0.6792453, g: 0.20825918, b: 0.21757919, a: 1}
+    - _baseColor: {r: 0, g: 0.009653568, b: 1, a: 1}
     - _fillOffset: {r: 0, g: 0, b: 0, a: 0}
     - _fillTiling: {r: 10, g: 10, b: 0, a: 0}
     - _impactPoint: {r: 0, g: 0, b: 0, a: 0}
     - _impactRippleDirection: {r: 0, g: 0, b: 1, a: 0}
-    - _rimColor: {r: 0.010751561, g: 0.009878943, b: 0.6981132, a: 0}
+    - _rimColor: {r: 0.001627796, g: 0, b: 0.41509432, a: 0}
     - _rimPower: {r: 1.5, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &726098580683473381
