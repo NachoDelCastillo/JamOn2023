@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Eye : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class Eye : MonoBehaviour
 
     bool golpeado = false;
 
+    Vector3 lookTarget;
+
+    [SerializeField]
+    bool lookPlayer;
+
     private void Awake()
     {
         id = GameManager.GetInstance().getEyes().Count;
@@ -35,12 +41,39 @@ public class Eye : MonoBehaviour
         // Fix 
         //foreach (MeshRenderer item in breakTheseParts)
         //    item.material = functionalEye;
+
+        lookTarget = ship.transform.position;
+
+        Invoke("ChangeTarget", 1);
+    }
+
+    void ChangeTarget()
+    {
+        int num = 200;
+        float x = Random.Range(-num, num);
+        float y = Random.Range(-num, num);
+        float z = Random.Range(-num, num);
+
+        lookTarget = ship.transform.position + new Vector3(x, y, z);
+
+        Invoke("ChangeTarget", Random.Range(.2f, 1f));
     }
 
     private void Update()
     {
         if (!golpeado)
-            transform.LookAt(ship.transform.position);
+        {
+            if (lookPlayer)
+                transform.LookAt(ship.transform.position);
+            else
+            {
+                Quaternion currentRotation = transform.rotation;
+                transform.LookAt(lookTarget);
+                Quaternion targetRotation = transform.rotation;
+
+                transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, Time.deltaTime * 3);
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -58,7 +91,7 @@ public class Eye : MonoBehaviour
             foreach (MeshRenderer item in breakTheseParts)
                 item.material = brokenEye;
 
-            Camera.main.GetComponent<CameraShake>().Shake(1f, 4);
+            Camera.main.GetComponent<CameraShake>().Shake(1f, 1);
         }
 
     }
