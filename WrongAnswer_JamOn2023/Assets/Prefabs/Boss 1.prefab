@@ -2505,6 +2505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 6290860960874357650, guid: 44195c3b5492ee441bd63c8c2db69b1b, type: 3}
+  explosion_2: {fileID: 0}
   boss: {fileID: 6628783444283211179}
 --- !u!1001 &779467686015238059
 PrefabInstance:
@@ -2517,6 +2518,14 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 7825019903767038885}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion_2
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
     - target: {fileID: 5997632954998887949, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: m_Name
       value: MetalEye
@@ -2595,6 +2604,14 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 8415327185856469390}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion_2
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
     - target: {fileID: 5997632954998887949, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: m_Name
       value: MetalEye
@@ -2907,6 +2924,14 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 1088867007013538536}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion_2
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
     - target: {fileID: 5997632954998887949, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: m_Name
       value: MetalEye
@@ -2985,6 +3010,14 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 379857825237182942}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion_2
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
     - target: {fileID: 5997632954998887949, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: m_Name
       value: MetalEye
@@ -3063,6 +3096,14 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 5533560007328216703}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion_2
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
     - target: {fileID: 5997632954998887949, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: m_Name
       value: MetalEye
@@ -3141,6 +3182,14 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 5533560007526532748}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion_2
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
     - target: {fileID: 5997632954998887949, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: m_Name
       value: MetalEye
@@ -3613,6 +3662,14 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 8755932158057684358}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion_2
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
     - target: {fileID: 5997632954998887949, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: m_Name
       value: MetalEye
@@ -3769,6 +3826,14 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 9144465288825832427}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 33e2046ad58df964485a910c2fe9e939, type: 3}
+    - target: {fileID: 4568887426218682547, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
+      propertyPath: explosion_2
+      value: 
+      objectReference: {fileID: 3970307263479812088, guid: 7cdd7eaeeacf8504b895d8233ec38982, type: 3}
     - target: {fileID: 5997632954998887949, guid: 089a80a1277da0a48b5fa05996fcb3c3, type: 3}
       propertyPath: m_Name
       value: MetalEye

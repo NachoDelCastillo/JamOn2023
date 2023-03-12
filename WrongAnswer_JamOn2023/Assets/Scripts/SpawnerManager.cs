@@ -24,6 +24,8 @@ public class SpawnerManager : MonoBehaviour
     private void Awake()
     {
         InvokeRepeating("SpawnSomething", 0.75f, 1.38f - (GameManager.GetInstance().GetLevel() * 0.38f));
+
+        powerUp_cohete.SpawnThis();
     }
 
     private void Update()

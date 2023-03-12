@@ -8,6 +8,8 @@ public class Eye : MonoBehaviour
     [SerializeField]
     GameObject explosion;
     [SerializeField]
+    GameObject explosion_2;
+    [SerializeField]
     GameObject boss;
 
     private void Awake()
@@ -22,7 +24,8 @@ public class Eye : MonoBehaviour
         if (misil != null && id==GameManager.GetInstance().GetEyeIndex())
         {
             GameManager.GetInstance().IncreaseEyeIndex();
-            Instantiate(explosion, boss.transform);
+            Instantiate(explosion, transform.position, Quaternion.identity, boss.transform);
+            Instantiate(explosion_2, transform.position, Quaternion.identity, boss.transform);
             misil.Explode();
             this.gameObject.SetActive(false);
         }
