@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41613636371dca4ca81536a9b282fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toSpawn: {fileID: 2410684139965244811, guid: afd092cc190d89f47be78a4da9dada25, type: 3}
+  toSpawn: {fileID: 2852042982093794005, guid: 13666ed9fd86f91479b40aed654a97b4, type: 3}
   player: {fileID: 0}
   boss: {fileID: 0}
   track: {fileID: 0}
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41613636371dca4ca81536a9b282fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toSpawn: {fileID: 5020596547456126659, guid: 19999fb9a3c099e4ba24a1e5cb2b0a12, type: 3}
+  toSpawn: {fileID: 2852042982093794005, guid: 6f45f4556a69a79498439c750d2a5030, type: 3}
   player: {fileID: 0}
   boss: {fileID: 0}
   track: {fileID: 0}

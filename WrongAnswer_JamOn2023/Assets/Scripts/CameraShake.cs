@@ -7,7 +7,22 @@ public class CameraShake : MonoBehaviour
     float strengh = 1;
     float time = 0;
 
+    Camera cam;
+    ShipController player;
+
+    float ogFOV;
+
+    [SerializeField]
+    float fovDecrease;
+
     float maxTime = 0;
+
+    private void Start()
+    {
+        cam = GetComponent<Camera>();
+        ogFOV = cam.fieldOfView;
+        player = GetComponentInParent<FollowCamera>().GetPlayer();
+    }
 
     private void Update()
     {
@@ -20,6 +35,21 @@ public class CameraShake : MonoBehaviour
                 transform.position = transform.parent.position;
             }
         }
+        /*
+        if (player.IsOnWall())
+        {
+            cam.fieldOfView -= fovDecrease * Time.deltaTime;
+        }
+        else
+        {
+            if (cam.fieldOfView < ogFOV)
+            {
+                cam.fieldOfView += fovDecrease * Time.deltaTime * 3;
+                if (cam.fieldOfView < ogFOV)
+                    cam.fieldOfView = ogFOV;
+            }
+        }
+        */
     }
 
     public void Shake(float duration, float fuerza)

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
     [SerializeField]
-    Transform player;
+    ShipController player;
     [SerializeField]
     Transform boss;
     [SerializeField]
@@ -22,43 +23,67 @@ public class FollowCamera : MonoBehaviour
     [Tooltip("Cuanto lerp se le aplica a la posicion al moverse")]
     float posLerp;
     [SerializeField]
+    float lerpVarOnWall = 8;
+    [SerializeField]
     [Tooltip("Cuanto lerp se le aplica al objetivo de la camara con respecto a su valor anterior")]
     float lookAtLerp;
     [SerializeField]
     [Tooltip("Cuanto lerp se le aplica al upwards de la camara")]
     float upLerp;
 
+    float wallLerp;
+    float floorLerp;
+
     Vector3 lastLook;
+
+    public ShipController GetPlayer()
+    {
+        return player;
+    }
 
     private void Start()
     {
-        transform.position = player.position;
+        transform.position = player.transform.position;
 
-        Vector3 playerToBoss = boss.position - player.position;
-        Vector3 lookAt = (playerToBoss * offset) + player.position;
-        transform.LookAt(lookAt, player.up);
+        Vector3 playerToBoss = boss.position - player.transform.position;
+        Vector3 lookAt = (playerToBoss * offset) + player.transform.position;
+        transform.LookAt(lookAt, player.transform.up);
         lastLook = lookAt;
+
+        wallLerp = posLerp / lerpVarOnWall;
+        floorLerp = posLerp;
     }
 
     void Update()
     {
-        Vector3 finalPos = player.position;
-        finalPos += player.forward * -behindPlayer;
-        finalPos += player.up * abovePlayer;
+        
+        if (player.IsOnWall())
+        {
+            posLerp = wallLerp;
+        }
+        else
+        {
+            posLerp = floorLerp;
+        }
+        
+
+        Vector3 finalPos = player.transform.position;
+        finalPos += player.transform.forward * -behindPlayer;
+        finalPos += player.transform.up * abovePlayer;
         transform.position = Vector3.Lerp(transform.position, finalPos, posLerp);
 
-        Vector3 playerToBoss = boss.position - player.position;
-        Vector3 lookAt = (playerToBoss * offset) + player.position;
-        transform.LookAt(Vector3.Lerp(lastLook, lookAt, lookAtLerp), Vector3.Lerp(transform.up, player.up, upLerp));
+        Vector3 playerToBoss = boss.position - player.transform.position;
+        Vector3 lookAt = (playerToBoss * offset) + player.transform.position;
+        transform.LookAt(Vector3.Lerp(lastLook, lookAt, lookAtLerp), Vector3.Lerp(transform.up, player.transform.up, upLerp));
         lastLook = lookAt;
     }
 
     private void OnDrawGizmos()
     {
-        Vector3 playerToBoss = boss.position - player.position;
+        Vector3 playerToBoss = boss.position - player.transform.position;
 
         Vector3 lookAt = playerToBoss * offset;
 
-        Gizmos.DrawLine(player.position, lookAt + player.position);
+        Gizmos.DrawLine(player.transform.position, lookAt + player.transform.position);
     }
 }
