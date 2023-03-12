@@ -9,22 +9,22 @@ public class CaseScroll : MonoBehaviour{
     public float speedMax=3;
 
     private float speed;
-    private bool isCrolling;
+    private bool isCrolling=false;
 
     private List<CaseCell> cells =new List<CaseCell>();
 
     public void Scroll(){
-        if (isCrolling) return;
-
-        isCrolling = true;
-        speed = Random.Range(speedMin, speedMax);
+        if (isCrolling) return;              
 
         if(cells.Count == 0) {
             for (int i = 0; i < 10; i++)
-                cells.Add(Instantiate(prefab,transform).GetComponentInChildren<CaseCell>());   
+                generateCell();
         }
         foreach (var cell in cells)
             cell.SetUp();
+
+        isCrolling = true;
+        speed = Random.Range(speedMin, speedMax);
     }
 
     private void Update(){
@@ -36,8 +36,11 @@ public class CaseScroll : MonoBehaviour{
             speed-=Time.deltaTime;
         else{
             speed= 0;
-            isCrolling= false;
             transform.position = new Vector3(525, 0, 0);
+            isCrolling = false;
         }
+    }
+    public void generateCell(){
+        cells.Add(Instantiate(prefab, transform).GetComponentInChildren<CaseCell>());
     }
 }
