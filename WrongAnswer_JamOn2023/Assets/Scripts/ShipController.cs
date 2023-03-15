@@ -62,6 +62,9 @@ public class ShipController : MonoBehaviour
     public bool jumping = false;
     float jumpDuration = .5f;
 
+    float rememberMaxTime = .1f;
+    float rememberTimer = 0;
+
     void Awake()
     {
         splineProjector = GetComponent<SplineProjector>();
@@ -91,10 +94,10 @@ public class ShipController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.started && !jumping && thisFrameOnTrack)
+        if (context.started)
         {
-            jumping = true;
-            Jump();
+
+            rememberTimer = rememberMaxTime;
         }
 
         //else if (context.canceled)
@@ -208,7 +211,26 @@ public class ShipController : MonoBehaviour
         lastFrameOnTrack = thisFrameOnTrack;
 
 
-        
+
+
+        // Jump Remember
+
+        // Se quiere saltar
+        if (rememberTimer > 0)
+        {
+            // Comprobar si se puede saltar
+            if (!jumping && thisFrameOnTrack)
+            {
+                rememberTimer = 0;
+
+                jumping = true;
+                Jump();
+            }
+
+            rememberTimer -= Time.deltaTime;
+        }
+
+        Debug.Log("rememberTimer = " + rememberTimer);
     }
     int orientationForward = 1;
     bool lookForward = false;

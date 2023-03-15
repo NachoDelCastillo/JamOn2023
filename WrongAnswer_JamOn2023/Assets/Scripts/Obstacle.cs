@@ -8,7 +8,7 @@ public class Obstacle : MonoBehaviour{
     { 
         pinchos=GetComponent<Pinchos>();
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         var player = other.GetComponent<HitsController>();
        
