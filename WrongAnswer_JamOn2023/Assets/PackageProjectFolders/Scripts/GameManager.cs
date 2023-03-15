@@ -116,6 +116,10 @@ public class GameManager : MonoBehaviour
             level_Text.text = "GiGaCHaD";
         else if (level == 3)
             level_Text.text = "DRiFTeaDoR";
+        else if (level == 4)
+            level_Text.text = "SPiKe HeLL";
+        else if (level == 5)
+            level_Text.text = "LaSeR HeLL";
 
         StartCoroutine(ChangeSceneCoroutine(1, ""));
     }
