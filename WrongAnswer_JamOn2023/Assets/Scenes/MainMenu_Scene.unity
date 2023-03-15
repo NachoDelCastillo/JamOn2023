@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WRONG ANSWER
+  m_text: "\tPHONK DRIFT"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5b2702f6ed0d1894290612142b23fde9, type: 2}
   m_sharedMaterial: {fileID: -127782218519496678, guid: 5b2702f6ed0d1894290612142b23fde9, type: 2}

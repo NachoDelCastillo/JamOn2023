@@ -20,5 +20,6 @@ public class GachaManager : MonoBehaviour
     public void Back(InputAction.CallbackContext context){
         allMenuManager.BackButtonHorizontal();
         scroll.GetComponent<CaseScroll>().limpiar();
+
     }
 }
