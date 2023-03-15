@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -44,12 +45,23 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (isGameOver() && Input.GetKeyDown(KeyCode.Space))
+        //if (isGameOver() && Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    gameOver_bool = false;
+        //    ChangeScene("level_1");
+        //}
+    }
+
+    public void RestartInput(InputAction.CallbackContext context)
+    {
+        if (context.started && isGameOver())
         {
             gameOver_bool = false;
             ChangeScene("level_1");
         }
     }
+
+
     public void SetGameOverPanel(GameObject go)
     {
         gameOver_Object = go;
