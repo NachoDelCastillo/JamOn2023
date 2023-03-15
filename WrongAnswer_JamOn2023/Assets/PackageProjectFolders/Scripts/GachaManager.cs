@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GachaManager : MonoBehaviour
 {
@@ -10,13 +11,14 @@ public class GachaManager : MonoBehaviour
 
     [SerializeField]
     GameObject scroll;
-
-    // UPDATE USAIS ESTE
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape)){
-            allMenuManager.BackButtonHorizontal();
-            scroll.GetComponent<CaseScroll>().limpiar();
-        }
+ 
+    public void Scroll(InputAction.CallbackContext context){
+       
+        scroll.GetComponent<CaseScroll>().Scroll();
+        //else if (context.canceled)
+    }
+    public void Back(InputAction.CallbackContext context){
+        allMenuManager.BackButtonHorizontal();
+        scroll.GetComponent<CaseScroll>().limpiar();
     }
 }

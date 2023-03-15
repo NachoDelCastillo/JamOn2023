@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.InputSystem;
 
 public class AllMenuManager_PK : MonoBehaviour
 {
@@ -76,8 +77,9 @@ public class AllMenuManager_PK : MonoBehaviour
     public void PressGacha()
     {
         mainMenu.enabled = false;
+        
         StartCoroutine(EnableMenu(gachaMenu, true, cameraSpeed / 2));
-
+        gachaMenu.GetComponent<PlayerInput>().enabled = true;
         cameraObj.DOMoveX(-cameraDistanceX, cameraSpeed);
     }
 
@@ -97,6 +99,7 @@ public class AllMenuManager_PK : MonoBehaviour
         settingsMenu.enabled = false;
         levelSelectorMenu.enabled = false;
         gachaMenu.enabled = false;
+        gachaMenu.GetComponent<PlayerInput>().enabled = false;
         StartCoroutine(EnableMenu(mainMenu, true, cameraSpeed/2));
 
         cameraObj.DOKill();
@@ -108,6 +111,7 @@ public class AllMenuManager_PK : MonoBehaviour
         settingsMenu.enabled = false;
         levelSelectorMenu.enabled = false;
         gachaMenu.enabled = false;
+        gachaMenu.GetComponent<PlayerInput>().enabled = false;
         StartCoroutine(EnableMenu(mainMenu, true, cameraSpeed / 2));
 
         cameraObj.DOKill();

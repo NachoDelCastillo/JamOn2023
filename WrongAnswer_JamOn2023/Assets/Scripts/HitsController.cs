@@ -18,10 +18,12 @@ public class HitsController : MonoBehaviour
     float effectCont = 0f;
     //Shield
     Shield shield;
+    ShipController shipController;
     GameManager gameManager;
 
     private void Start(){
         shield = GetComponentInChildren<Shield>();
+        shipController = GetComponentInChildren<ShipController>();
         gameManager=GameManager.GetInstance();
         cont = invinTime + 0.5f;
     }   
@@ -59,6 +61,7 @@ public class HitsController : MonoBehaviour
             else{
                 Debug.Log("MUERTO");
                 gameManager.setGameOver(true);
+                shipController.setDeath(true);
             }
 
             cont = 0;

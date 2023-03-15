@@ -60,6 +60,7 @@ public class ShipController : MonoBehaviour
 
     // Jump
     public bool jumping = false;
+    bool death;
     float jumpDuration = .5f;
 
     float rememberMaxTime = .1f;
@@ -91,18 +92,22 @@ public class ShipController : MonoBehaviour
             accelerate_pressed = false;
     }
 
+    public void setDeath(bool death) { this.death = death; }
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (death) { 
+            GameManager.GetInstance().restart();
+            death = false; 
+        }
+        else if (context.started)
         {
-
             rememberTimer = rememberMaxTime;
         }
 
         //else if (context.canceled)
     }
-
+   
     bool jumpRight;
     void Jump()
     {

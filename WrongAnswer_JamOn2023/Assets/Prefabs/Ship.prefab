@@ -6353,6 +6353,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: cd6a66e3-332f-4503-9919-f263c69ee89b
     m_ActionName: ShipMap/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6448674493842473556}
+        m_TargetAssemblyTypeName: ShipController, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7ad3174c-31c3-4f59-b9ac-3b2f6f805701
+    m_ActionName: ShipMap/LOSER[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: ShipMap
@@ -8504,6 +8520,37 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!1 &7663353504519716787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3970307263479812088, guid: 2e1fd6494521a864e8a0a6dc6f5d5121, type: 3}
+  m_PrefabInstance: {fileID: 2798264317979814963}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286571108306638755}
+  m_Layer: 0
+  m_Name: 'SinbadParticles (Missing Prefab with guid: 2e1fd6494521a864e8a0a6dc6f5d5121)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1286571108306638755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 3967599842182806416, guid: 2e1fd6494521a864e8a0a6dc6f5d5121, type: 3}
+  m_PrefabInstance: {fileID: 2798264317979814963}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7663353504519716787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1018495374464723334}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7751907547407617356
 GameObject:
   m_ObjectHideFlags: 0
@@ -9079,11 +9126,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e1fd6494521a864e8a0a6dc6f5d5121, type: 3}
---- !u!4 &1286571108306638755 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3967599842182806416, guid: 2e1fd6494521a864e8a0a6dc6f5d5121, type: 3}
-  m_PrefabInstance: {fileID: 2798264317979814963}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5574812362552462431
 PrefabInstance:
   m_ObjectHideFlags: 0
