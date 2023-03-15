@@ -23,7 +23,7 @@ public class PauseMenu_PK : MenuManager_PK
         if (index == 0) Unpause();
         if (index == 1)
         {
-            GameManager.GetInstance().ChangeScene(SceneManager.GetActiveScene().buildIndex);
+            GameManager.GetInstance().ChangeScene(GameManager.instance.GetLevel());
         }
         if (index == 2) GameManager.GetInstance().ChangeScene("MainMenu_Scene");
     }
