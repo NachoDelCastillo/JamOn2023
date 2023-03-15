@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -49,6 +50,8 @@ public class GameManager : MonoBehaviour
             ChangeScene("level_1");
         }
     }
+
+
     public void SetGameOverPanel(GameObject go)
     {
         gameOver_Object = go;

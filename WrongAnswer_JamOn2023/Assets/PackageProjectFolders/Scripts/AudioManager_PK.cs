@@ -55,6 +55,8 @@ public class AudioManager_PK : MonoBehaviour
                 Stop("Gameplay_Music_1");
                 Stop("Gameplay_Music_2");
                 Stop("Gameplay_Music_3");
+                Stop("Gameplay_Music_4");
+                Stop("Gameplay_Music_5");
                 Play("MainMenu_Music", 1);
                 break;
             default:
@@ -67,6 +69,10 @@ public class AudioManager_PK : MonoBehaviour
                     Play("Gameplay_Music_2", 1);
                 else if (GameManager.GetInstance().GetLevel() == 3)
                     Play("Gameplay_Music_3", 1);
+                else if (GameManager.GetInstance().GetLevel() == 4)
+                    Play("Gameplay_Music_4", 1);
+                else if (GameManager.GetInstance().GetLevel() == 5)
+                    Play("Gameplay_Music_5", 1);
                 break;
         }
     }
