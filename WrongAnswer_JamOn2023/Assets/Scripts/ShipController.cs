@@ -234,8 +234,6 @@ public class ShipController : MonoBehaviour
 
             rememberTimer -= Time.deltaTime;
         }
-
-        Debug.Log("rememberTimer = " + rememberTimer);
     }
     int orientationForward = 1;
     bool lookForward = false;

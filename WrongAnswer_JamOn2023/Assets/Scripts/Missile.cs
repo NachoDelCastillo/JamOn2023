@@ -46,8 +46,6 @@ public class Missile : MonoBehaviour
 
             float dist = Vector3.Distance(transform.position, bossPosition);
 
-            Debug.Log("dist = " + dist);
-
             if (dist < 100)
             {
                 if (!rotatingfast)

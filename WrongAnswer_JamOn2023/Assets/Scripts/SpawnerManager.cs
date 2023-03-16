@@ -23,10 +23,15 @@ public class SpawnerManager : MonoBehaviour
 
     enum ExtraModes
     {
-        normal, onlySpikes, onlyLasers
+        normal, infinitePain, onlySpikes, onlyLasers
     }
 
     ExtraModes currentMode = ExtraModes.normal;
+
+
+    float infiniteObstacleTimer;
+    float infiniteDifficultLevel;
+    float incrementDifficultySpeed = .2f;
 
     private void Awake()
     {
@@ -35,18 +40,43 @@ public class SpawnerManager : MonoBehaviour
         if (difficultyLevel == 4)
         {
             difficultyLevel = 3;
+            currentMode = ExtraModes.infinitePain;
+        }
+        if (difficultyLevel == 5)
+        {
+            difficultyLevel = 3;
             currentMode = ExtraModes.onlySpikes;
         }
-        else if (difficultyLevel == 5)
+        else if (difficultyLevel == 6)
         {
             difficultyLevel = 3;
             currentMode = ExtraModes.onlyLasers;
         }
 
-        InvokeRepeating("SpawnSomething", 0.75f, 1.38f - (difficultyLevel * 0.38f));
+        if (currentMode != ExtraModes.infinitePain)
+            InvokeRepeating("SpawnSomething", 0.75f, GetObstacleDelayByDifficultyLevel(difficultyLevel));
+        else
+        {
+            // Dificultad inicial
+            infiniteDifficultLevel = 1.5f;
+            infiniteObstacleTimer = GetObstacleDelayByDifficultyLevel(infiniteDifficultLevel);
+
+            Invoke("SpawnSomething", .75f);
+        }
         //InvokeRepeating("SpawnSomething", .1f, .1f);
 
         powerUp_cohete.SpawnThis();
+    }
+
+    float GetObstacleDelayByDifficultyLevel(float difficultyLevel)
+    {
+        return 1.38f - (difficultyLevel * 0.38f);
+    }
+
+    private void Update()
+    {
+        if (currentMode == ExtraModes.infinitePain)
+            InfiniteMode();
     }
 
     void SpawnSomething()
@@ -79,28 +109,60 @@ public class SpawnerManager : MonoBehaviour
                     }
                     break;
 
+                case ExtraModes.infinitePain:
+
+                    break;
+
                 case ExtraModes.normal:
                 default:
 
-                    // Normal GameMode
-                    int randomInt = Random.Range(0, 5 + 1);
-                    bool spawnPincho = randomInt == 0;
-                    if (spawnPincho)
-                    {
-                        pinchos.SpawnThis();
-                        if (Random.Range(0, 4 + 1) == 0)
-                            pinchos.SpawnThis();
-                    }
-                    else
-                    {
-                        punos.SpawnThis();
-                        if (Random.Range(0, 3 + 1) == 0)
-                            pinchos.SpawnThis();
-                    }
+                    SpawnNormalObstacles();
                     break;
             }
 
             itemCont++;
+        }
+
+    }
+
+    void SpawnNormalObstacles()
+    {
+        // Normal GameMode
+        int randomInt = Random.Range(0, 5 + 1);
+        bool spawnPincho = randomInt == 0;
+        if (spawnPincho)
+        {
+            pinchos.SpawnThis();
+            if (Random.Range(0, 4 + 1) == 0)
+                pinchos.SpawnThis();
+        }
+        else
+        {
+            punos.SpawnThis();
+            if (Random.Range(0, 3 + 1) == 0)
+                pinchos.SpawnThis();
+        }
+    }
+
+
+    private void InfiniteMode()
+    {
+        if (infiniteObstacleTimer < 0)
+        {
+            if (infiniteDifficultLevel < 3)
+                infiniteDifficultLevel += incrementDifficultySpeed * Time.deltaTime;
+            else infiniteDifficultLevel = 3;
+
+            float infiniteObstacleDelay = GetObstacleDelayByDifficultyLevel(infiniteDifficultLevel);
+            Invoke("SpawnSomething", infiniteObstacleDelay);
+            SpawnNormalObstacles();
+            Debug.Log("infiniteObstacleDelay = " + infiniteObstacleDelay);
+
+            infiniteObstacleTimer = infiniteObstacleDelay;
+        }
+        else
+        {
+            infiniteObstacleTimer -= Time.deltaTime;
         }
 
     }
