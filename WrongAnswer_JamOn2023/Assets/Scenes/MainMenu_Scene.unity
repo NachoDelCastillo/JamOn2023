@@ -610,7 +610,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_text
-      value: skins
+      value: skIns
       objectReference: {fileID: 0}
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_fontSize
@@ -2219,7 +2219,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_text
-      value: credits
+      value: crEdIts
       objectReference: {fileID: 0}
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_fontSize
@@ -4583,7 +4583,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_text
-      value: quit
+      value: quIt
       objectReference: {fileID: 0}
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_fontSize
@@ -5328,7 +5328,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_text
-      value: settings
+      value: sEttIngs
       objectReference: {fileID: 0}
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_fontSize
@@ -33199,7 +33199,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_text
-      value: play
+      value: plAy
       objectReference: {fileID: 0}
     - target: {fileID: 7679616428674263910, guid: c4b676f72b17b40499f23935f7abb96b, type: 3}
       propertyPath: m_fontSize
