@@ -4,32 +4,34 @@ using UnityEngine;
 
 public class SkinManager : MonoBehaviour
 {
-    [System.Serializable]
-    private class ListOfGameobject{
-        public List<GameObject> mallas;
-    }
+    [SerializeField]
+    Skins_SO skins;
 
     [SerializeField]
-    List<ListOfGameobject> skins;
-    Vector2Int skin;
-    public void setActivatedSkin(Vector2Int skin){
+    Transform skinParent;
+
+    GameObject skinGFX;
+
+    int skin;
+    public void setActivatedSkin(int skin){
         this.skin = skin;
 
         DeactivateAllSkins();
 
-        skins[skin.x].mallas[skin.y].SetActive(true);
-        GetComponent<HitsController>().setGfx(skins[skin.x].mallas[skin.y]);
+        skinGFX = Instantiate(skins[skin].skin, skinParent);
+        GetComponent<HitsController>().setGfx(skinGFX);
     }
-    public GameObject skinActive() { return skins[skin.x].mallas[skin.y]; }
+    public GameObject skinActive() { return skinGFX; }
 
 
     void DeactivateAllSkins()
     {
-        var parent = skins[skin.x].mallas[skin.y].transform.parent;
+        if (skinGFX == null) return;
+        var parent = skinGFX.transform.parent;
 
         for (int i = 1; i < parent.childCount; i++)
         {
-            parent.GetChild(i).gameObject.SetActive(false);
+            Destroy(parent.GetChild(i).gameObject);
         }
     }
 }

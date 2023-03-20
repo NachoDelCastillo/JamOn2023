@@ -5,41 +5,36 @@ using UnityEngine.UI;
 
 public class CaseCell : MonoBehaviour
 {
-    [System.Serializable]
-    private class ListOfSprites{
-        public List<Sprite> sprites;        
-    }
-    [SerializeField]
-    private List<ListOfSprites> spriteList;
 
     [SerializeField]
-    private int[] chances;
+    Skins_SO skins;
 
-    [SerializeField]
-    private Color[] colors;
+    int result;
 
-    CaseScroll caseScroll;
-    public int idList;
-    public int id;
-
-    private void Start(){
-        caseScroll = GetComponentInParent<CaseScroll>();
-    }
     public void SetUp(){
-        int index = Randomize();
-        id = Random.Range(0, spriteList[index].sprites.Count);
-        GetComponent<Image>().sprite = spriteList[index].sprites[id];
-        transform.parent.GetComponent<Image>().color= colors[index];
+        Skins_SO.Rarities index = Randomize();
+
+        var skinsInRarity = skins.GetSkinByRarity(index);
+
+        int id = Random.Range(0, skinsInRarity.Count);
+        GetComponent<Image>().sprite = skinsInRarity[id].image;
+        transform.parent.GetComponent<Image>().color= skins.raritiesColors[(int)index];
+
+        result = skinsInRarity[id].index;
     }
 
-    private int Randomize(){
+    private Skins_SO.Rarities Randomize(){
         int ind = 0;
         int rand = Random.Range(0, 101);
-        for (int i = 0; i < chances.Length; i++){
-            if (rand <= chances[i]) { idList = i; return i; }
+        for (int i = 0; i < skins.chances.Count; i++){
+            if (rand <= skins.chances[i]) { return (Skins_SO.Rarities)i; }
             ind++;
         }
-        idList = ind;
-        return ind;
-    }   
+        return (Skins_SO.Rarities)ind;
+    }  
+    
+    public int GetResult()
+    {
+        return result;
+    }
 }

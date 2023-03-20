@@ -6,7 +6,62 @@ ModelImporter:
   - first:
       74: -623603649343465320
     second: Scene
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sinbad_Blade
+    second: {fileID: 2100000, guid: bb2aa2e2ba31fca49959d8c30ea7c820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sinbad_Body
+    second: {fileID: 2100000, guid: bb2aa2e2ba31fca49959d8c30ea7c820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sinbad_Clothes
+    second: {fileID: 2100000, guid: bb2aa2e2ba31fca49959d8c30ea7c820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sinbad_Eyes
+    second: {fileID: 2100000, guid: bb2aa2e2ba31fca49959d8c30ea7c820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sinbad_Gold
+    second: {fileID: 2100000, guid: bb2aa2e2ba31fca49959d8c30ea7c820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sinbad_Handle
+    second: {fileID: 2100000, guid: bb2aa2e2ba31fca49959d8c30ea7c820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sinbad_Hilt
+    second: {fileID: 2100000, guid: bb2aa2e2ba31fca49959d8c30ea7c820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sinbad_Ruby
+    second: {fileID: 2100000, guid: bb2aa2e2ba31fca49959d8c30ea7c820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sinbad_Sheaths
+    second: {fileID: 2100000, guid: bb2aa2e2ba31fca49959d8c30ea7c820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sinbad_Spikes
+    second: {fileID: 2100000, guid: bb2aa2e2ba31fca49959d8c30ea7c820, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sinbad_Teeth
+    second: {fileID: 2100000, guid: bb2aa2e2ba31fca49959d8c30ea7c820, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

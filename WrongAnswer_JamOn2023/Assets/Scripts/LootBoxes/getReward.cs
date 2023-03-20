@@ -14,7 +14,7 @@ public class getReward : MonoBehaviour{
         
         if (cmp != null){            
            
-            GameManager.GetInstance().setReward(cmp.idList, cmp.id);
+            GameManager.GetInstance().setReward(cmp.GetResult());
             gameObject.SetActive(false);
 
             cmp.transform.parent.GetChild(1).gameObject.SetActive(true);

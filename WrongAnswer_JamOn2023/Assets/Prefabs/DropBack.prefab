@@ -245,25 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1464ee1aa176423488c4b4a592a0586c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteList:
-  - sprites:
-    - {fileID: 21300000, guid: 6a08b30ed60fb304193acec0f7b60570, type: 3}
-    - {fileID: 21300000, guid: 5b023290a1cb4594ab1ede4872ac4d46, type: 3}
-  - sprites:
-    - {fileID: 21300000, guid: d86d9dcaec124094a99941269ef19c41, type: 3}
-    - {fileID: 21300000, guid: e304c3186245fca44893dcead0415437, type: 3}
-  - sprites:
-    - {fileID: 21300000, guid: 503fb91f651c41b4781c93637f31b6c8, type: 3}
-  - sprites:
-    - {fileID: 21300000, guid: 674b44eb95c61eb4db62bc44ff57f27a, type: 3}
-  chances: 4b0000005a0000006200000064000000
-  colors:
-  - {r: 0.022546029, g: 0.004271993, b: 0.9056604, a: 1}
-  - {r: 0.5116566, g: 0.23139909, b: 0.754717, a: 1}
-  - {r: 0.5566038, g: 0.102394104, b: 0.40358108, a: 1}
-  - {r: 0.6981132, g: 0.68565154, b: 0.062566735, a: 1}
-  idList: 0
-  id: 0
+  skins: {fileID: 11400000, guid: 9fbd7b28e9d90ea428c6f09260d92328, type: 2}
 --- !u!61 &5387236483162750638
 BoxCollider2D:
   m_ObjectHideFlags: 0
